@@ -1,6 +1,6 @@
 /**
- * The environnement 
+ * The environnement
  */
 export const environment = {
-  production: true
+  production: true,
 };
