@@ -1,0 +1,9 @@
+Pour le projet cantinière, il faudrait sans sdoute qu'on s'accorde sur une 'Guideline' de conventions syntaxiques de codage, afin d'avoir quelque chose d'uniforme.
+
+Il faudrait donc qu'on décide de tout cela ensemble, on doit choisir :
+
+ - Est-ce qu'on utilise des tabulation, ou des espaces pour l'indentation
+ 
+ - Quelle taille fait une tabulation (2 espaces ? 4 espaces ?)
+ 
+ - Est-ce qu'on met un espace avant une parenthèse ouvrante, et après une parenthèse fermante ?

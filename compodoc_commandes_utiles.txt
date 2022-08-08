@@ -1,0 +1,23 @@
+npx compodoc -p tsconfig.doc.json -n TourOfHeroes --language en-US
+    - Crée la documentation de manière standard
+
+npx compodoc -p tsconfig.doc.json -n TourOfHeroes --language en-US -s
+    - Crée la documentation, puis la lance sur localhost
+
+npx compodoc -p tsconfig.doc.json -n TourOfHeroes --language en-US --coverageTest 80
+    - Regarde si le code source est suffisamment documenté (ici, avec un seuil à 80%)
+
+npx compodoc -p tsconfig.doc.json -n TourOfHeroes --language en-US --coverageMinimumPerFile 1 --coverageTestThresholdFail false
+    - Regarde si chqaue fichier individuelement est assez documenté
+
+npx compodoc -p tsconfig.doc.json -n TourOfHeroes --language en-US --coverageMinimumPerFile 1 --coverageTestShowOnlyFailed
+    - Même chose qu'au dessus, mais ne montre que les fichiers pas assez documentés
+
+
+**Merci d'indiquer** :
+
+- La marche à suivre pour reproduire le bug.
+- Le comportement attendu.
+- Le comportement observé.
+- Qui s'en occupe
+- S'il a été corrigé

@@ -6,7 +6,13 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "compodoc": "npx compodoc -p tsconfig.doc.json -n Cantiniere --language en-US",
+    "composerve": "npx compodoc -p tsconfig.doc.json -n Cantiniere --language en-US -s",
+    "compopen": "npx compodoc -p tsconfig.doc.json -n Cantiniere --language en-US -s -o",
+    "coverdoc": "npx compodoc -p tsconfig.doc.json -n Cantiniere --language en-US --coverageTest 80",
+    "coverfile": "npx compodoc -p tsconfig.doc.json -n Cantiniere --language en-US --coverageMinimumPerFile --coverageTestThresholdFail false",
+    "coverfail": "npx compodoc -p tsconfig.doc.json -n Cantiniere --language en-US --coverageMinimumPerFile 1 --coverageTestShowOnlyFailed"
   },
   "private": true,
   "dependencies": {
