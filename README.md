@@ -28,4 +28,4 @@ Pour puller (recopier) une branche : `git pull origin la-branche` (en général,
 
 Pour mettre une branche à jour selon develop : `git rebase origin develop`
 
-Pour pusher une branche : `git push origin ma-branche` N'oubliez pas d'ouvrir une pull rquest sur Github ensuite
+Pour pusher une branche : `git push origin ma-branche` N'oubliez pas d'ouvrir une pull request sur Github ensuite
