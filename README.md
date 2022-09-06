@@ -26,6 +26,6 @@ Pour créer une nouvelle branche : `git checkout -b ma-branche` (on créera les 
 
 Pour puller (recopier) une branche : `git pull origin la-branche` (en général, on fera `git pull origin develop`)
 
-Pour mettre une branche à jour selon develop : `git rebase origin develop`
+Pour mettre une branche à jour selon develop : `git rebase origin develop` Tachez de toujours rebaser vos branches avant de pusher, ça limitera les conflits.
 
 Pour pusher une branche : `git push origin ma-branche` N'oubliez pas d'ouvrir une pull request sur Github ensuite
