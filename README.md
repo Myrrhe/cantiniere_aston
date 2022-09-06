@@ -33,8 +33,8 @@ Pour commiter : `git commit -m "Message de commit"`
 Pour mettre une branche à jour selon develop : `git rebase origin develop` Tachez de toujours rebaser vos branches avant de pusher, ça limitera les conflits.
 
 Pour pusher une branche : `git push origin ma-branche` N'oubliez pas d'ouvrir une pull request sur Github ensuite
-
-
+\
+\
 On fera en général les choses de la manière suivante :
 
 1)  `git branch` On vérifie qu'on est bien sur develop. Si on y est pas -> `git checkout develop`
