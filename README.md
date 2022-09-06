@@ -22,7 +22,7 @@ Pour voir sur quelle branche vous êtes : `git branch`
 
 Pour aller d'une branche à l'autre : `git checkout la-branche-ou-je-veux-aller`
 
-Pour créer une nouvelle branche : `git checkout -b ma-branche`
+Pour créer une nouvelle branche : `git checkout -b ma-branche` (on créera les nouvelles branches à partir de develop à priori)
 
 Pour puller (recopier) une branche : `git pull origin la-branche` (en général, on fera `git pull origin develop`)
 
