@@ -35,6 +35,15 @@ Pour mettre une branche à jour selon develop : `git rebase origin develop` Tach
 Pour pusher une branche : `git push origin ma-branche` N'oubliez pas d'ouvrir une pull request sur Github ensuite
 \
 \
+En tout premier :
+
+1) `git clone https://github.com/Myrrhe/cantiniere_aston.git` On clone le projet
+2) `cd cantiniere_aston` On se déplace dans le répertoire qu'on a cloné
+3) `git branch` On est censé obtenir * *main*
+4) `git checkout -b develop` On crée la branche develop
+5) `git pull origin develop` On met à jour develop
+
+
 On fera en général les choses de la manière suivante :
 
 1)  `git branch` On vérifie qu'on est bien sur develop. Si on y est pas -> `git checkout develop`
