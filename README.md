@@ -38,7 +38,7 @@ Pour pusher une branche : `git push origin ma-branche` N'oubliez pas d'ouvrir un
 On fera en général les choses de la manière suivante :
 
 1)  `git branch` On vérifie qu'on est bien sur develop. Si on y est pas -> `git checkout develop`
-2)  `git checkout nouvelle-branche` Ça nous téléporte automatiquement sur la nouvelle branche, pas besoin de refaire de checkout
+2)  `git checkout -b nouvelle-branche` Ça nous téléporte automatiquement sur la nouvelle branche, pas besoin de refaire de checkout
 3)  Codage. N'oubliez pas Ctrl+S !
 4)  `git add --all` On ajoute les fichiers crées/modifiés
 5)  `git commit -m "Message de commit"` Essayez de mettreun message de commit explicit
