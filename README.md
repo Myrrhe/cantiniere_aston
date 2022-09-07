@@ -11,7 +11,7 @@ Maquette : https://www.figma.com/file/z3fHWypK45At2UaAsv5VdQ/Project-Cafetaria?n
 
 Discord : https://discord.gg/2Cfng5FwP3
 
-Fichiers utiles : https://drive.google.com/file/d/19zDyMm1bVu6r04lzEK0U8uumgXV5pQ-W/view?usp=sharing
+Fichiers utiles : https://drive.google.com/drive/folders/150ZGsJmORCVcEgTTWgUn278cImbprdAh
 
 Trello : https://trello.com/b/njZDLpRR/projet-cantini%C3%A8re
 
