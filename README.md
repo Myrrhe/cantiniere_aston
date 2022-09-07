@@ -11,7 +11,7 @@ Discord :
 
 Fichiers utiles : https://drive.google.com/file/d/19zDyMm1bVu6r04lzEK0U8uumgXV5pQ-W/view?usp=sharing
 
-Trello : https://trello.com/invite/b/njZDLpRR/b56654e38c0864eb99d7b919120da600/projet-cantiniere
+Trello : https://trello.com/b/njZDLpRR/projet-cantini%C3%A8re
 
 
 ## Commandes Git de base
