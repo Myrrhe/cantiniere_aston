@@ -15,6 +15,8 @@ Fichiers utiles : https://drive.google.com/drive/folders/150ZGsJmORCVcEgTTWgUn27
 
 Trello : https://trello.com/b/njZDLpRR/projet-cantini%C3%A8re
 
+Wiki du back-end : https://ferretrenaud.ovh/renaud91/stone.lunchtime/-/wikis/home
+
 ## Commandes Git de base
 
 Pour cloner le projet : `git clone https://github.com/Myrrhe/cantiniere_aston.git`
