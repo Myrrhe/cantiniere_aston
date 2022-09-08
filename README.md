@@ -1,11 +1,11 @@
 # cantiniere_aston
 Projet 1 front Aston
 
-======================================================================
+========================================================================
 
 ## Liens utiles
 
-Tâches en cours : https://docs.google.com/spreadsheets/d/16hEQ4JFsvmL_tY8ghXHF59MyWPwJxb8nRIRnOqpAmug/edit?usp=sharing
+Informations du groupe : https://docs.google.com/spreadsheets/d/16hEQ4JFsvmL_tY8ghXHF59MyWPwJxb8nRIRnOqpAmug/edit?usp=sharing
 
 Maquette : https://www.figma.com/file/z3fHWypK45At2UaAsv5VdQ/Project-Cafetaria?node-id=0%3A1
 
