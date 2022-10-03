@@ -1,22 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin/admin.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+
+import { HeaderComponent } from './core/components/header/header.component';
+import { FooterComponent } from './core/components/footer/footer.component';
+
+import { NavbarComponent } from './core/components/navbar/navbar.component';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+
+import { UserInfoComponent } from './features/admin/components/user-info/user-info.component';
+import { UserListComponent } from './features/admin/components/user-list/user-list.component';
+import { LoginComponent } from './features/login/components/login/login.component';
+import { SigninComponent } from './features/signin/components/signin/signin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
     HeaderComponent,
     FooterComponent,
+    NavbarComponent,
+    PageNotFoundComponent,
+    UserListComponent,
+    UserInfoComponent,
+    LoginComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
