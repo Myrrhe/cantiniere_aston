@@ -16,6 +16,8 @@ import { HomeComponent } from './components/home/home.component';
 import { CategoryPipe } from './pipes/category.pipe';
 import { DayPipe } from './pipes/day.pipe';
 
+import { PagePanierComponent } from './page-panier/page-panier.component';
+import { PanierCarteComponent } from './panier-carte/panier-carte.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { DayPipe } from './pipes/day.pipe';
     RegistrationComponent,
     HomeComponent,
     CategoryPipe,
-    DayPipe
+    DayPipe,
+    PagePanierComponent,
+    PanierCarteComponent,
   ],
   imports: [
     BrowserModule,
