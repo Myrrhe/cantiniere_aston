@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "cantiniere"
+  "defaultProject": "cantiniere",
+  "cli": {
+    "analytics": "bda77d80-2d4f-412b-829a-7c2d26478cf3"
+  }
 }
