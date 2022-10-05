@@ -7,7 +7,7 @@ Projet 1 front Aston
 
 Informations du groupe : https://docs.google.com/spreadsheets/d/16hEQ4JFsvmL_tY8ghXHF59MyWPwJxb8nRIRnOqpAmug/edit?usp=sharing
 
-Maquette : https://www.figma.com/file/AZuQ4VctJVrueeOoPrESa5/Projet-Cantini%C3%A8re?node-id=5%3A2
+Maquette : https://www.figma.com/file/AZuQ4VctJVrueeOoPrESa5/Projet-Cantini%C3%A8re
 
 Discord : https://discord.gg/2Cfng5FwP3
 
