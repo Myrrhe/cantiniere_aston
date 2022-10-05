@@ -6,6 +6,10 @@
     height: 274px;
     padding: 10px;
 }
+#FooterContainer img{
+    height: 274px;
+
+}
 
 #FooterContainer #FooterText {
     color: white;
