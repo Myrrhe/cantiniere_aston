@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # Sublime text
-.sublime-project
-.sublime-workspace
+*.sublime-project
+*.sublime-workspace
