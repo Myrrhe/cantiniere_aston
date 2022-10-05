@@ -19,15 +19,15 @@ export class UserListService {
     return this.http.get<User[]>(`${this.apiUrl}/user/findall`);
   }
 
-  getUser(): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/user/find/1`);
-  }
+  // getUser(): Observable<User> {
+  //   return this.http.get<User>(`${this.apiUrl}/user/find/1`);
+  // }
 
-  createUser(user: User): Observable<User> {
-    return this.http.put<User>(`${this.apiUrl}/user/register`, user);
-  }
+  // createUser(user: User): Observable<User> {
+  //   return this.http.put<User>(`${this.apiUrl}/user/register`, user);
+  // }
 
-  deleteUser(id: number): Observable<User> {
-    return this.http.delete<User>(`${this.apiUrl}/user/delete/${id}`);
-  }
+  // deleteUser(id: number): Observable<User> {
+  //   return this.http.delete<User>(`${this.apiUrl}/user/delete/${id}`);
+  // }
 }
