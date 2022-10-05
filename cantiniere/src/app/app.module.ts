@@ -10,6 +10,7 @@ import { FooterComponent } from './core/components/footer/footer.component';
 
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { PageLoginComponent } from './page-login/page-login.component';
 
 import { UserInfoComponent } from './features/admin/components/user-info/user-info.component';
 import { UserListComponent } from './features/admin/components/user-list/user-list.component';
@@ -25,6 +26,7 @@ import { LoginComponent } from './features/login/components/login/login.componen
     UserListComponent,
     UserInfoComponent,
     LoginComponent
+    PageLoginComponent,
   ],
   imports: [
     BrowserModule,
