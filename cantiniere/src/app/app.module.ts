@@ -25,7 +25,7 @@ import { LoginComponent } from './features/login/components/login/login.componen
     PageNotFoundComponent,
     UserListComponent,
     UserInfoComponent,
-    LoginComponent
+    LoginComponent,
     PageLoginComponent,
   ],
   imports: [

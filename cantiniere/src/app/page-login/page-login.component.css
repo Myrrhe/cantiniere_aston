@@ -1,0 +1,12 @@
+.background{
+	display: flex;
+	flex-direction: row;
+	background-image: url("../../assets/lunchroom_1920x1080.webp");
+}
+.left_area{
+	background-color: #a0a0a088;
+	width: 40%;
+}
+.right_area{
+	background-color: #00000000;
+}
