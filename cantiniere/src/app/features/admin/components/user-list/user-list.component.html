@@ -1,0 +1,24 @@
+I'm going on an adventure
+
+<h2>Liste des utilisateurs</h2>
+<!-- <ul>
+    <li >
+      <p>{{user.id}} - {{user.name}} {{user.firstname}} {{user.wallet}}€</p>
+  </li>
+</ul> -->
+
+
+<table *ngFor="let user of users">
+  <tr>
+    <th>Identifiant</th>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Wallet</th>
+  </tr>
+  <tr>
+    <td>{{user.id}} </td>
+    <td>{{user.name}}</td>
+    <td>{{user.firstname}}</td>
+    <td>{{user.wallet}}</td>
+  </tr>
+</table>
