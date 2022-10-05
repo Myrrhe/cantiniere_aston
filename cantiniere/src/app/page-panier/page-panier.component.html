@@ -1,4 +1,60 @@
-<div>
-    <p>Panier Page</p>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@1,700&display=swap');
+</style>
+<!--le div pody de le composant de panier page-->
+<div id="PagePanierContainer">
+    <!--le div pour le page title-->
+    <div class="container text-center menu">
+        <div class="cc">
+            <div class="ligne1"></div>
+            <h1>Panier</h1>
+            <div class="ligne2"></div>
+        </div>
+        <!--end de page title-->
+    </div>
+    <!--le div pour le contenu de la panier carts et totale-->
+    <div id="PanierCotnent">
+        <!--le div pour les carts dans le panier-->
+        <p id="msgPanVid">Votre panier est vide</p>
+        <div id="PanierCarts">
+            <div class="Cart">
+                <div class="CartPanjour"><p>lundi</p></div>
+                <div class="cartText">
+                    <p>plat</p>
+                    <p class="text">Qty:</p>
+                    <p class="text">32E</p>
+                    <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
+                </div>
+                
+            </div>
+            <div class="Cart">
+                <div class="CartPanjour"><p>lundi</p></div>
+                <div class="cartText">
+                    <p>plat</p>
+                    <p class="text">Qty:</p>
+                    <p class="text">32E</p>
+                    <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">   
+                </div> 
+            </div>
+            <div class="Cart">
+                <div class="CartPanjour"><p>lundi</p></div>
+                <div class="cartText">
+                    <p>plat</p>
+                    <p class="text">Qty:</p>
+                    <p class="text">32E</p>
+                    <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
+                </div>
+            </div>
+            <div>
+                <p> TOTALE</p>
+            </div>
+        </div>
+        <!--le block totale change de contunu dynamique-->
+        <section id="Totale">
+            <h2>TOTALE</h2>
+            <p>70E</p>
+            <!--le button change de contunu dynamique-->
+            <button>click</button>
+        </section>
+    </div>
 </div>
-
