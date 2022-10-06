@@ -93,7 +93,7 @@
 }
 
 .Cart img {
-    width: 2em;
+
     height: 20px;
     margin-left: 20%;
 }
@@ -129,7 +129,7 @@ span {
 #Totale {
     box-shadow: 3px 4px white;
     width: 350px;
-    height: 230px;
+    height: 250px;
     margin-left: 3%;
     position: relative;
     background: #FFFFFF;
@@ -194,6 +194,14 @@ span {
         width: 40%;
         left: 35%;
 
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #Totale {
+        margin-top: 8%;
+        width: 300px;
+        height: 200px;
     }
 }
 
