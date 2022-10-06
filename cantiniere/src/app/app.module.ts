@@ -5,9 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { AdminComponent } from './admin/admin.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './core/components/header/header.component';
+import { FooterComponent } from './core/components/footer/footer.component';
 
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
@@ -19,7 +18,6 @@ import { LoginComponent } from './features/login/components/login/login.componen
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
     HeaderComponent,
     FooterComponent,
     NavbarComponent,

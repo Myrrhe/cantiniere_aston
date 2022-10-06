@@ -1,0 +1,68 @@
+/*le style de le body de header */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap');
+
+#HeaderContainer {
+    background: url('../../assets/images/headerImg.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 800px;
+    margin-bottom: 20%;
+}
+
+/*******le style de le top de header********/
+#HeaderTop {
+    background: linear-gradient(rgba(209, 200, 200, 0.55), rgba(253, 251, 251, 0.55));
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#HeaderTop #logo {
+    position: relative;
+    left: 35%;
+    top: 10px;
+    margin-right: 50px;
+}
+
+#ConctBtn {
+    background-color: #03989E;
+    font-weight: bold;
+    border: 0;
+    border-radius: 12px;
+    padding: 1%;
+    margin-right: 1%;
+}
+
+/******************************************************/
+/*******le style de navbar********/
+nav {
+    margin: 0 auto;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-shadow: 2px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10%;
+    margin:2%;
+}
+nav ul li{
+list-style: none;
+font-size: 30px;
+text-shadow: 2px 2px rgb(141, 136, 136);
+font-family: 'Courier New', Courier, monospace;
+
+}
+nav h1 {
+    font-family: 'Great Vibes';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 163px;
+    text-shadow: 2px 2px rgb(141, 136, 136);
+}
