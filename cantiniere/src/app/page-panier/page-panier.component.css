@@ -1,10 +1,15 @@
 /*********************style de page title*************************/
+
+.menu h1{
+    font-family: 'Great Vibes', cursive;
+    font-size: 8vh;
+}
 .menu .ligne1{
     border-top:2px solid black;
     border-bottom:2px solid black;
     width: 100px;
     height: 9px;
-    margin-top: 22px;
+    margin-top: 28px;
     margin-right: 21px;
 }
 .menu .ligne2{
@@ -12,7 +17,7 @@
     border-bottom: 2px solid black;
     width: 100px;
     height: 9px;
-    margin-top: 22px;
+    margin-top: 28px;
     margin-left: 21px;
 }
 .menu .cc{
@@ -20,86 +25,93 @@
     display: flex;
     justify-content: center;
 }
-.container h1{
-    font-family: 'Great Vibes', cursive;
-    font-size: xxx-large;
-}
+
+
 /**************************end de style page title***********************************/
 /******message panier vide avec dispaly dynamique****/
-#msgPanVid{
+#msgPanVid {
     display: none;
     font-family: 'surve', cursive;
     font-size: xxx-large;
     color: black;
 }
-#PanierCotnent{
+
+#PanierCotnent {
     display: flex;
     flex-direction: row;
     margin-top: 5%;
     justify-content: center;
 }
-#PanierCarts{
+#panierCartsTotale{
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin-left: 5%;
-    border: 2px solid black;
 }
-.Cart{
+#PanierCarts {
     display: flex;
     flex-direction: column;
-    position: relative;
-    height: 90px;
+    margin-left: 5%;
+    height: auto;
+    border-bottom: 1px solid gray;
+    
 }
-.cartText{
-    display: flex;
-    flex-direction: row;
-   
-}
-.cartText p:first-child{
-    margin-left: 15px;
-}
-.cartText .text{
-    margin-left: 20%;
-}
-.Cart img{
-    width: 20px;
-    height: 20px;
-    margin-left: 20%;
 
-}
-.CartPanjour{
-    width: 8%;
-    height: 10px;
-    margin-left: 20px;
-    margin-top: 10px;
-    border-radius: 20%;
-    background-color: #03999e82;
+.Cart {
     position: relative;
+    margin-bottom: 5%;
 }
-.CartPanjour p{
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'inter';
-    position: absolute;
-    top:-15px;
-    left:-8px
-}
-.Cart::after{
+.Cart::after {
     content: "";
     width: 20%;
     height: 1px;
     background-color: rgba(173, 161, 161, 0.807);
     position: absolute;
-    bottom: 1%;
+    bottom:-20%;
     left: 43%;
 }
+.cartText {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    padding-left: 4%;
+    font-size: 20px;
+    font-weight:400;
+    margin-bottom: 2%;
+}
+.cartText .text {
+    margin-left: 20%;
+}
+.Cart img {
+    width: 20px;
+    height: 20px;
+    margin-left: 20%;
+}
+ .Cart:last-child::after{
+    width: 0; 
+}
+.CartPanjour {
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.CartPanjour p {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'inter';
+    margin-bottom: 2%;
+    text-shadow: 7px 6px 8px #03989E
+}
+span{
+    margin-top: 2%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 /********************* end style panier carts************************/
 /*********************style de section totale*************************/
-#Totale{
-box-shadow: 3px 4px white;
-width: 300px;
-height: 300px;
-margin-right: 5%;
-border: 2px solid black;
+#Totale {
+    box-shadow: 3px 4px white;
+    width: 300px;
+    height: 300px;
+    margin-right: 5%;
+    border: 2px solid black;
 }
