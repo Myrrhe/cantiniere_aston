@@ -1,2 +1,36 @@
-<p>login works!</p>
-
+<div class="background">
+	<div class="left_area half-transparent">
+		<img src="../assets/images/logo.png" alt="lock" class="logo">
+		<div class="title">
+			Bienvenu
+		</div>
+		<div class="text">
+			Veuillez entrer vos identifiants et mots de passe s'il vous plaît
+		</div>
+		<button class="button color-black">CREER UN COMPTE</button>
+	</div>
+	<div class="right_area">
+		<form class="area_input half-transparent">
+			<div class="input_form">
+                <input type="text" name="email" placeholder="Email">
+                <div class="input_icon_tile">
+                	<div class="img_center">
+            		    <img src="../assets/user-solid.svg" alt="user" class="image_form">
+            	    </div>
+            	</div>
+                <label for="email" class="placeholder" hidden>Email</label>
+            </div>
+            <div class="input_form">
+                <input type="password" name="password" placeholder="Mot de passe">
+                <div class="input_icon_tile">
+                	<div class="img_center">
+            		    <img src="../assets/lock-solid.svg" alt="lock" class="image_form">
+            		</div>
+            	</div>
+                <label for="password" class="placeholder" hidden>Mot de passe</label>
+            </div>
+            <a href="reset-password" class="forgot-password">J'ai oublié mon mot de passe</a>
+            <input type="submit" value="Se connecter" class="submit button color-cyan">
+		</form>
+	</div>
+</div>
