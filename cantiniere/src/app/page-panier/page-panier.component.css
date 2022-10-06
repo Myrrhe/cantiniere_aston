@@ -1,18 +1,20 @@
 /*********************style de page title*************************/
 
-.menu h1{
+.menu h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 8vh;
 }
-.menu .ligne1{
-    border-top:2px solid black;
-    border-bottom:2px solid black;
+
+.menu .ligne1 {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
     width: 100px;
     height: 9px;
     margin-top: 28px;
     margin-right: 21px;
 }
-.menu .ligne2{
+
+.menu .ligne2 {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     width: 100px;
@@ -20,7 +22,8 @@
     margin-top: 28px;
     margin-left: 21px;
 }
-.menu .cc{
+
+.menu .cc {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -42,20 +45,20 @@
     margin-top: 5%;
     justify-content: center;
 }
-#panierCartsTotale{
+
+#panierCartsTotale {
     display: flex;
     flex-direction: column;
     width: 50%;
+
 }
+
 #PanierCarts {
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
     height: auto;
-    border-bottom: 1px solid gray;
-    
+    border-bottom: 1px solid #A9A9A9;
 }
-
 .Cart {
     position: relative;
     margin-bottom: 5%;
@@ -64,50 +67,60 @@
     content: "";
     width: 20%;
     height: 1px;
-    background-color: rgba(173, 161, 161, 0.807);
+    background-color: #A9A9A9;
     position: absolute;
-    bottom:-20%;
+    bottom: -20%;
     left: 43%;
 }
+
 .cartText {
     display: flex;
     flex-direction: row;
     height: 40px;
     padding-left: 4%;
     font-size: 20px;
-    font-weight:400;
+    font-weight: 400;
     margin-bottom: 2%;
+    width: 100%;
+
 }
+
 .cartText .text {
-    margin-left: 20%;
+    margin-left: 30%;
+
 }
+
 .Cart img {
     width: 20px;
     height: 20px;
     margin-left: 20%;
 }
- .Cart:last-child::after{
-    width: 0; 
+
+.Cart:last-child::after {
+    width: 0;
 }
+
 .CartPanjour {
     margin-left: 2%;
     margin-top: 2%;
 }
+
 .CartPanjour p {
     font-size: 20px;
     font-weight: bold;
     font-family: 'inter';
     margin-bottom: 2%;
-    text-shadow: 7px 6px 8px #03989E
+    text-shadow: 7px 6px 8px #03999e
 }
-span{
+
+span {
     display: flex;
     margin-top: 2%;
     font-size: 20px;
     font-weight: bold;
 }
 
-#PanierCotnent span p:last-child{
+#PanierCotnent span p:last-child {
     margin-left: 45%;
 }
 
@@ -115,8 +128,46 @@ span{
 /*********************style de section totale*************************/
 #Totale {
     box-shadow: 3px 4px white;
-    width: 300px;
-    height: 300px;
-    margin-right: 5%;
-    border: 2px solid black;
+    width: 350px;
+    height: 230px;
+    margin-left: 3%;
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #CDCDCD;
+    box-shadow: 2px 7px 16px rgba(0, 0, 0, 0.31);
+    margin-top: 3%;
+}
+
+#Totale h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 8%;
+    margin-top: 8%;
+    position: relative;
+    border-bottom: 1px solid #A9A9A9;
+    width: 80%;
+    padding-bottom: 3%;
+}
+
+#Totale p {
+    position: absolute;
+    top: 35%;
+    left: 8%;
+    font-family: 'Inter';
+    font-size: 20px;
+}
+
+#Totale button {
+    background-color: #03999e9d;
+    width: 90%;
+    margin-left: 2%;
+    color: #F5F5F5;
+    text-align: center;
+    font-weight: 400;
+    border: 0;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    font-size: 15px;
 }

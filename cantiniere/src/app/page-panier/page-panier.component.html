@@ -1,6 +1,10 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@1,700&display=swap');
 </style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@100;200&family=Roboto:ital,wght@1,700&display=swap');
+</style>
+
 <!--le div pody de le composant de panier page-->
 <div id="PagePanierContainer">
     <!--le div pour le page title-->
@@ -12,66 +16,76 @@
         </div>
         <!--end de page title-->
     </div>
-    <!--le div pour le contenu de la panier carts et totale-->
+    <!--le div pour le contenu de la panier carts et totale section -->
     <div id="PanierCotnent">
-        <!--le div pour les carts dans le panier-->
+        <!--message affiche si le page panier est vide-->
         <p id="msgPanVid">Votre panier est vide</p>
+        <!--le div pour les carts et le span total -->
         <div id="panierCartsTotale">
-        <div id="PanierCarts">
-            <div class="Cart">
-                <div class="CartPanjour"><p>lundi</p></div>
-                <div class="cartText">
-                    <p>plat</p>
-                    <p class="text">Qty:</p>
-                    <p class="text">32E</p>
-                    <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
+            <!--div contien touts les carts de panier -->
+            <div id="PanierCarts">
+                <!--div contien touts les carts de jour-->
+                <div class="Cart">
+                    <div class="CartPanjour">
+                        <p>lundi</p>
+                    </div>
+                    <!---------le contenu de cart pour ce jour---------------------->
+                    <div class="cartText">
+                        <p>plat</p>
+                        <p class="text">Qty:</p>
+                        <p class="text">32€</p>
+                        <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
+                    </div>
                 </div>
-                
-            </div>
-            <div class="Cart">
-                <div class="CartPanjour"><p>mercerdi</p></div>
-                <div class="cartText">
-                    <p>plat</p>
-                    <p class="text">Qty:</p>
-                    <p class="text">32E</p>
-                    <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">   
-                </div> 
-                <div class="cartText">
-                    <p>plat</p>
-                    <p class="text">Qty:</p>
-                    <p class="text">32E</p>
-                    <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">   
-                </div> 
-                <div class="cartText">
-                    <p>plat</p>
-                    <p class="text">Qty:</p>
-                    <p class="text">32E</p>
-                    <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">   
-                </div> 
+                <!---------end de cart---------------------->
+                <div class="Cart">
+                    <div class="CartPanjour">
+                        <p>mercerdi</p>
+                    </div>
+                    <div class="cartText">
+                        <p>plat</p>
+                        <p class="text">Qty:</p>
+                        <p class="text">32€</p>
+                        <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
+                    </div>
+                    <div class="cartText">
+                        <p>plat</p>
+                        <p class="text">Qty:</p>
+                        <p class="text">32€</p>
+                        <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
+                    </div>
+                    <div class="cartText">
+                        <p>plat</p>
+                        <p class="text">Qty:</p>
+                        <p class="text">32€</p>
+                        <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
+                    </div>
+
+                </div>
+                <div class="Cart">
+                    <div class="CartPanjour">
+                        <p>lundi</p>
+                    </div>
+                    <div class="cartText">
+                        <p>plat</p>
+                        <p class="text">Qty:</p>
+                        <p class="text">32€</p>
+                        <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
+                    </div>
+                </div>
 
             </div>
-            <div class="Cart">
-                <div class="CartPanjour"><p>lundi</p></div>
-                <div class="cartText">
-                    <p>plat</p>
-                    <p class="text">Qty:</p>
-                    <p class="text">32E</p>
-                    <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
-                </div>
-            </div>
-            
+            <span>
+                <p>TOTAL</p>
+                <p>70€</p>
+            </span>
         </div>
-        <span>
-            <p> TOTALE</p>
-            <p>70E</p>
-        </span>
-    </div>
         <!--le block totale change de contunu dynamique-->
         <section id="Totale">
-            <h2>TOTALE</h2>
-            <p>70E</p>
+            <h2>TOTAL</h2>
+            <p>70€</p>
             <!--le button change de contunu dynamique-->
-            <button>click</button>
+            <button>CONNECTEZ-VOUS</button>
         </section>
     </div>
 </div>
