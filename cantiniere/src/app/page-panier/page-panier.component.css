@@ -101,9 +101,14 @@
     text-shadow: 7px 6px 8px #03989E
 }
 span{
+    display: flex;
     margin-top: 2%;
     font-size: 20px;
     font-weight: bold;
+}
+
+#PanierCotnent span p:last-child{
+    margin-left: 45%;
 }
 
 /********************* end style panier carts************************/
