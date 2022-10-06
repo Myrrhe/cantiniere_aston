@@ -59,10 +59,12 @@
     height: auto;
     border-bottom: 1px solid #A9A9A9;
 }
+
 .Cart {
     position: relative;
     margin-bottom: 5%;
 }
+
 .Cart::after {
     content: "";
     width: 20%;
@@ -78,7 +80,7 @@
     flex-direction: row;
     height: 40px;
     padding-left: 4%;
-    font-size: 20px;
+    font-size: 1em;
     font-weight: 400;
     margin-bottom: 2%;
     width: 100%;
@@ -91,7 +93,7 @@
 }
 
 .Cart img {
-    width: 20px;
+    width: 2em;
     height: 20px;
     margin-left: 20%;
 }
@@ -106,9 +108,7 @@
 }
 
 .CartPanjour p {
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'inter';
+    font-size: 1.5em;
     margin-bottom: 2%;
     text-shadow: 7px 6px 8px #03999e
 }
@@ -116,7 +116,7 @@
 span {
     display: flex;
     margin-top: 2%;
-    font-size: 20px;
+    font-size: 1em;
     font-weight: bold;
 }
 
@@ -139,9 +139,9 @@ span {
 }
 
 #Totale h2 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'inter', sans-serif;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 1.5em;
     margin-left: 8%;
     margin-top: 8%;
     position: relative;
@@ -154,7 +154,7 @@ span {
     position: absolute;
     top: 35%;
     left: 8%;
-    font-family: 'Inter';
+    font-family: 'inter';
     font-size: 20px;
 }
 
@@ -171,3 +171,30 @@ span {
     left: 3%;
     font-size: 15px;
 }
+
+/******************************Responsive*********************************/
+@media screen and (max-width: 1024px) {
+    #PanierCotnent {
+        flex-direction: column;
+    }
+
+    #panierCartsTotale {
+        width: 60%;
+    }
+
+    #PanierCotnent {
+        align-items: center;
+    }
+
+    .CartPanjour p {
+        font-size: 1.5em;
+    }
+
+    .Cart::after {
+        width: 40%;
+        left: 35%;
+
+    }
+}
+
+/************************************************************************/
