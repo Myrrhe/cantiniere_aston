@@ -1,24 +1,23 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-
-import {AfterViewInit, ElementRef, ViewChild} from '@angular/core';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 export class User {
-
   constructor(
     public address: string = "",
-    public town: string = "",
-    public postal_code: string = "",
+    public wallets: number = 0,
+    public postalCode: string = "",
     public email: string = "",
+    public isLunchLady: boolean = false,
+    public password: string = "",
+    public name: string = "",
     public firstname: string = "",
-    public lastname: string = "",
-    public phone_number: string = "",
+    public phone: string = "",
+    public town: string = "",
     public sex: number = 1,
-    public avatar: File = new File([],''),
-    public password_1: string = "",
+    public image: File = new File([],''),
     public password_2: string = "",
   ) {  }
-
 }
 
 @Component({
@@ -31,18 +30,33 @@ export class User {
 })
 export class SigninComponent implements OnInit {
 
-  model = new User();
+  httpOptions = {
+    headers: new HttpHeaders({ "content-type": "application/json" }),
+  };
+
+  user = new User();
+
+  private userUrl = "/user/register";
 
   submitted = false;
 
   constructor(
+    private httpClient: HttpClient,
   ) {}
 
   ngOnInit(): void {}
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() {
+    this.submitted = true;
+  }
 
-  newUser() {}
+  newUser() {
+    let res = this.httpClient.put<User>(
+      this.userUrl,
+      this.user,
+      this.httpOptions
+    );
+  }
 
 
 }
