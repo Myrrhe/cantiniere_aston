@@ -33,9 +33,9 @@
 /**************************end de style page title***********************************/
 /******message panier vide avec dispaly dynamique****/
 #msgPanVid {
-    display: none;
+    display: block;
     font-family: 'surve', cursive;
-    font-size: xxx-large;
+    font-size: large;
     color: black;
 }
 
@@ -113,7 +113,7 @@
     text-shadow: 7px 6px 8px #03999e
 }
 
-span {
+#totaleSpan {
     display: flex;
     margin-top: 2%;
     font-size: 1em;
@@ -149,6 +149,9 @@ span {
     width: 80%;
     padding-bottom: 3%;
 }
+#Totale span {
+    color: rgb(7, 6, 6);
+}
 
 #Totale p {
     position: absolute;
@@ -156,6 +159,7 @@ span {
     left: 8%;
     font-family: 'inter';
     font-size: 20px;
+    
 }
 
 #Totale button {

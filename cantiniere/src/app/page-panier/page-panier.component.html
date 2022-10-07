@@ -19,73 +19,39 @@
     <!--le div pour le contenu de la panier carts et totale section -->
     <div id="PanierCotnent">
         <!--message affiche si le page panier est vide-->
-        <p id="msgPanVid">Votre panier est vide</p>
+        <p id="msgPanVid" *ngIf="panierCartsTotale.innerHTML === ''">Votre panier est vide</p>
         <!--le div pour les carts et le span total -->
-        <div id="panierCartsTotale">
+        <div id="panierCartsTotale" #panierCartsTotale>
             <!--div contien touts les carts de panier -->
             <div id="PanierCarts">
                 <!--div contien touts les carts de jour-->
-                <div class="Cart">
+                <div class="Cart" *ngFor="let command of commands">
                     <div class="CartPanjour">
-                        <p>lundi</p>
+                        <p>{{command.jour}}</p>
                     </div>
                     <!---------le contenu de cart pour ce jour---------------------->
                     <div class="cartText">
-                        <p>plat</p>
-                        <p class="text">Qty:</p>
-                        <p class="text">32€</p>
+                        <p>{{command.plat}}</p>
+                        <p class="text">Qty:{{command.qty}}</p>
+                        <p class="text">{{command.prix}}€</p>
                         <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
                     </div>
                 </div>
-                <!---------end de cart---------------------->
-                <div class="Cart">
-                    <div class="CartPanjour">
-                        <p>mercerdi</p>
-                    </div>
-                    <div class="cartText">
-                        <p>plat</p>
-                        <p class="text">Qty:</p>
-                        <p class="text">32€</p>
-                        <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
-                    </div>
-                    <div class="cartText">
-                        <p>plat</p>
-                        <p class="text">Qty:</p>
-                        <p class="text">32€</p>
-                        <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
-                    </div>
-                    <div class="cartText">
-                        <p>plat</p>
-                        <p class="text">Qty:</p>
-                        <p class="text">32€</p>
-                        <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
-                    </div>
-
-                </div>
-                <div class="Cart">
-                    <div class="CartPanjour">
-                        <p>lundi</p>
-                    </div>
-                    <div class="cartText">
-                        <p>plat</p>
-                        <p class="text">Qty:</p>
-                        <p class="text">32€</p>
-                        <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
-                    </div>
-                </div>
-
+                <!---------end de cart---------------------->  
             </div>
-            <span>
+            <span id="totaleSpan">
                 <p>TOTAL</p>
-                <p>70€</p>
+                <p>{{total}}<span>€</span></p>
             </span>
         </div>
         <!--le block totale change de contunu dynamique-->
-        <section id="Totale">
+        <section id="Totale" *ngIf="panierCartsTotale.innerHTML !== ''">
             <h2>TOTAL</h2>
-            <p>70€</p>
+            <!--affiche de total de prix de les plats de panier-->
+            <p>{{total}}<span>€</span></p>
             <!--le button change de contunu dynamique-->
-            <button>CONNECTEZ-VOUS</button>
+            <button *ngIf="!isAuth">CONNECTEZ-VOUS</button>
+            <button *ngIf="isAuth">VALIDER LA COMMANDE</button>
         </section>
     </div>
 </div>
