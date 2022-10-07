@@ -7,43 +7,78 @@
 		<div class="text">
 			Veuillez entrer vos coordonnées s'il vous plaît
 		</div>
+		<button class="button button-login" routerLink="/login" routerLinkActive="active">SE CONNECTER</button>
 	</div>
 	<div class="right_area">
-		<form class="area_input half-transparent">
+		<form #userForm="ngForm" class="form-group half-transparent" (ngSubmit)="onSubmit()">
 
 			<div class="input_form">
-				<label for="address" class="placeholder" hidden>Adresse</label>
-                <input type="text" name="address" placeholder="Adresse" class="standart-input">
+				<div>
+					<label for="address" class="placeholder" hidden>Adresse</label>
+	                <input type="text" name="address" id="address" placeholder="Adresse" class="standart-input" [(ngModel)]="model.address" required #address="ngModel">
+                </div>
+                <div [hidden]="address.valid || address.pristine" class="form-danger">
+				    L'adresse est obligatoire
+				</div>
             </div>
 
             <div class="input_form">
             	<label for="town" class="placeholder" hidden>Ville</label>
-                <input type="text" name="town" placeholder="Ville" class="standart-input">
+                <input type="text" name="town" id="town" placeholder="Ville" class="standart-input" [(ngModel)]="model.town" required #town="ngModel">
+                <div [hidden]="town.valid || town.pristine" class="form-danger">
+				    La ville est obligatoire
+				</div>
             </div>
 
             <div class="input_form">
-            	<label for="postalCode" class="placeholder" hidden>Code postal</label>
-                <input type="text" name="postalCode" placeholder="Code postal" class="standart-input">
+            	<label for="postal_code" class="placeholder" hidden>Code postal</label>
+                <input type="text" name="postal_code" id="postal_code" placeholder="Code postal" class="standart-input" [(ngModel)]="model.postal_code" required #postal_code="ngModel" minlength="5" maxlength="5">
+                <div [hidden]="postal_code.value != '' || postal_code.pristine" class="form-danger">
+				    Le code postal est obligatoire
+				</div>
+				<div *ngIf="postal_code.errors?.['minlength']" class="form-danger">
+				    Le code postal doit faire 5 caractères
+				</div>
+            </div>
+
+            <div class="input_form">
+            	<label for="email" class="placeholder" hidden>Code postal</label>
+                <input type="text" name="email" id="email" placeholder="Email" class="standart-input" [(ngModel)]="model.email" required #email="ngModel">
+                <div [hidden]="email.valid || email.pristine" class="form-danger">
+				    L'email est obligatoire
+				</div>
             </div>
 
             <div class="input_form">
             	<label for="firstname" class="placeholder" hidden>Prénom</label>
-                <input type="text" name="firstname" placeholder="Prénom" class="standart-input">
+                <input type="text" name="firstname" id="firstname" placeholder="Prénom" class="standart-input" [(ngModel)]="model.firstname" required #firstname="ngModel">
+                <div [hidden]="firstname.valid || firstname.pristine" class="form-danger">
+				    Le prénom est obligatoire
+				</div>
             </div>
 
             <div class="input_form">
             	<label for="lastname" class="placeholder" hidden>Nom de famille</label>
-                <input type="text" name="lastname" placeholder="Nom de famille" class="standart-input">
+                <input type="text" name="lastname" id="lastname" placeholder="Nom de famille" class="standart-input" [(ngModel)]="model.lastname" required #lastname="ngModel">
+                <div [hidden]="lastname.valid || lastname.pristine" class="form-danger">
+				    Le nom de famille est obligatoire
+				</div>
             </div>
 
             <div class="input_form">
-            	<label for="phone" class="placeholder" hidden>Numéro de téléphone</label>
-                <input type="text" name="phone" placeholder="N° de téléphone" class="standart-input">
+            	<label for="phone_number" class="placeholder" hidden>Numéro de téléphone</label>
+                <input type="text" name="phone_number" id="phone_number" placeholder="N° de téléphone" class="standart-input" [(ngModel)]="model.phone_number" required #phone_number="ngModel" minlength="10" maxlength="10">
+                <div [hidden]="phone_number.value != '' || phone_number.pristine" class="form-danger">
+				    Le numéro de téléphone est obligatoire
+				</div>
+				<div *ngIf="phone_number.errors?.['minlength']" class="form-danger">
+				    Le numéro de téléphone doit faire 10 caractères
+				</div>
             </div>
 
             <div class="input_form label_left">
             	<label for="sex" class="placeholder">Genre</label>
-				<select name="sex" id="sex" class="select_form">
+				<select name="sex" id="sex" class="select_form" [(ngModel)]="model.sex" required>
 				    <option value="1">Femme</option>
 				    <option value="0">Homme</option>
 				    <option value="2">Autre</option>
@@ -52,20 +87,29 @@
 
             <div class="input_form label_left">
             	<label for="avatar" class="placeholder">Avatar</label>
-                <input type="file" name="email" placeholder="Email" accept="image/png, image/jpeg" class="select_form">
+                <input type="file" name="avatar" id="avatar" placeholder="Avatar" accept="image/png, image/jpeg" class="select_form" [(ngModel)]="model.avatar">
             </div>
 
             <div class="input_form">
-            	<label for="password" class="placeholder" hidden>Mot de passe</label>
-                <input type="password" name="password" placeholder="Mot de passe" class="standart-input" matInput required>
+            	<label for="password_1" class="placeholder" hidden>Mot de passe</label>
+                <input type="password" name="password_1" id="password" placeholder="Mot de passe" class="standart-input" matInput required [(ngModel)]="model.password_1" #password_1="ngModel" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                <div [hidden]="password_1.value != '' || password_1.pristine" class="form-danger">
+				    Le mot de passe est obligatoire
+				</div>
+				<div *ngIf="password_1.errors?.['pattern']" class="form-danger">
+				    Le mot de passe doit contenir au moins 8 caractères, 1 nombre,<br>1 minuscule, 1 majuscule, et 1 caractère spécial (@$!%*?&)
+				</div>
             </div>
 
             <div class="input_form">
-            	<label for="password2" class="placeholder" hidden>Répétez le mot de passe</label>
-                <input type="password" name="password2" placeholder="Répétez le mot de passe" class="standart-input" matInput>
+            	<label for="password_2" class="placeholder" hidden>Répétez le mot de passe</label>
+                <input type="password" name="password_2" id="password_2" placeholder="Répétez le mot de passe" class="standart-input" matInput required [(ngModel)]="model.password_2" #password_2="ngModel">
+                <div *ngIf="password_1.value != password_2.value" class="form-danger">
+				    Les mots de passe doivent être identiques
+				</div>
             </div>
 
-            <input type="submit" value="Créer le compte" class="submit button color-cyan">
+            <input type="submit" value="Créer le compte" class="submit button button-form" (click)="newUser(); userForm.reset()" [disabled]="!userForm.form.valid">
 		</form>
 	</div>
 </div>
