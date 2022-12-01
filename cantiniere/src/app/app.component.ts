@@ -18,7 +18,8 @@ export class AppComponent {
    */
   title = 'cantiniere';
 
+  // This method is used to check the current URL, to decide which component to include in the page
   hasRoute(route: string) {
-      return this.router.url == route;
+    return this.router.url == route;
   }
 }
