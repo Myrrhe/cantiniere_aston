@@ -14,8 +14,8 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 
 import { UserInfoComponent } from './features/admin/components/user-info/user-info.component';
 import { UserListComponent } from './features/admin/components/user-list/user-list.component';
-import { LoginComponent } from './features/login/components/login/login.component';
-import { SigninComponent } from './features/signin/components/signin/signin.component';
+import { LoginComponent } from './features/auth/components/login/login.component';
+import { SigninComponent } from './features/auth/components/signup/signin.component';
 
 @NgModule({
   declarations: [

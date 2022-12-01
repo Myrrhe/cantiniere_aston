@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent } from './features/login/components/login/login.component';
-import { SigninComponent } from './features/signin/components/signin/signin.component';
+import { LoginComponent } from './features/auth/components/login/login.component';
+import { SigninComponent } from './features/auth/components/signup/signin.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
