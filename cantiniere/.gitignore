@@ -43,3 +43,7 @@ testem.log
 .DS_Store
 Thumbs.db
 .env
+
+# Sublime text
+*.sublime-project
+*.sublime-workspace

@@ -33,7 +33,11 @@ Pour ajouter des fichiers à un commit : `git add --all`
 
 Pour commiter : `git commit -m "Message de commit"`
 
+<<<<<<< HEAD
 Pour mettre une branche à jour selon proto : `git rebase origin/proto` Tachez de toujours rebaser vos branches avant de pusher, ça limitera les conflits.
+=======
+Pour mettre une branche à jour selon develop : `git rebase origin/develop` Tachez de toujours rebaser vos branches avant de pusher, ça limitera les conflits.
+>>>>>>> develop
 
 Pour pusher une branche : `git push origin ma-branche` N'oubliez pas d'ouvrir une pull request sur Github ensuite
 \
@@ -43,8 +47,13 @@ En tout premier :
 1) `git clone https://github.com/Myrrhe/cantiniere_aston.git` On clone le projet
 2) `cd cantiniere_aston` On se déplace dans le répertoire qu'on a cloné
 3) `git branch` On est censé obtenir * *main*
+<<<<<<< HEAD
 4) `git checkout -b proto` On crée la branche proto
 5) `git pull origin ptoto` On met à jour proto
+=======
+4) `git checkout -b develop` On crée la branche develop
+5) `git pull origin ptoto` On met à jour develop
+>>>>>>> develop
 
 
 On fera en général les choses de la manière suivante :
@@ -57,7 +66,20 @@ On fera en général les choses de la manière suivante :
 6)  `git checkout proto` On revient sur proto
 7)  `git pull origin proto` On met à jour proto
 8)  `git checkout nouvelle-branche` On revient sur la branche crée initialement
+<<<<<<< HEAD
 9)  `git rebase origin proto` On met à jour la branche. S'il y a des conflits, on les règle, puis on fait `git rebase --continue`
 10) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
 11) On crée la pull request
 12) On vérifie le code, puis on merge
+=======
+
+EN CAS DE CONFLITS :
+
+Il y a plusieurs manière de régler les conflits, celle présentée ici n'en est qu'une parmis d'autres.
+
+    10)  `git rebase origin develop` On met à jour la branche. S'il y a des conflits, on les règle, puis on fait `git rebase --continue`
+
+11) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
+12) On crée la pull request
+13) On vérifie le code, puis on merge
+>>>>>>> develop
