@@ -35,7 +35,6 @@ import { SigninComponent } from './features/auth/components/signup/signin.compon
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

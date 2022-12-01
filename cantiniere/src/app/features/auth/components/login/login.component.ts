@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+//
+// import { };
+//
 import { AuthService } from '../../services/auth.service';
+import { Credential } from 'src/app/interfaces/credential';
 
 
 @Component({
@@ -17,17 +22,29 @@ export class LoginComponent implements OnInit {
   editdata: any;
   responsedata: any;
 
-  constructor(private service: AuthService,private route:Router) {
+  constructor(private http: HttpClient, private service: AuthService,private route:Router) {
     localStorage.clear();
   }
-  Login = new FormGroup({
-    username: new FormControl("", Validators.required),
-    password: new FormControl("", Validators.required)
-  });
+
+  form: Credential = {
+    email: '',
+    password: ''
+  };
 
   ngOnInit(): void {
-    if(this.Login.valid){
+  //   if(this.form.valid){
+  // }
+}
 
-    }
+  onSubmit(): void{
+    console.log(this.form)
+    this.http.post('http://localhost:8080/stone.lunchtime/login',this.form).subscribe(
+      data => {
+        console.log(data)
+        // this.tokenService.saveToken(data.access_token)
+      },
+      err => console.log(err)
+    )
   }
 }
+
