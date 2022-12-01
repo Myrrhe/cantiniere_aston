@@ -11,9 +11,14 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   constructor(
+    private router: Router
   ) {}
   /**
    * The title of the page
    */
   title = 'cantiniere';
+
+  hasRoute(route: string) {
+    return this.router.url == route;
+  }
 }

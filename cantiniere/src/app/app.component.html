@@ -1,1 +1,3 @@
+<app-header *ngIf="!hasRoute('/login') && !hasRoute('/signin') && !hasRoute('/404')"></app-header>
 <router-outlet></router-outlet>
+<app-footer *ngIf="!hasRoute('/404')"></app-footer>
