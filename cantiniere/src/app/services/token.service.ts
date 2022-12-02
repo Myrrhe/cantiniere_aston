@@ -10,12 +10,17 @@ export class TokenService {
 
     saveToken(token: any): void{
         localStorage.setItem('token', token)
-        this.router.navigate([''])
+        this.router.navigate(['admin'])
     }
 
     isLogged(): boolean{
         const token = localStorage.getItem('token')
         console.log(token);
         return !! token // Transform a variable into boolean
+    }
+
+    clearToken(): void{ // Delete of token for deconnexion purpose
+        localStorage.removeItem('token')
+        this.router.navigate(['/'])
     }
 }

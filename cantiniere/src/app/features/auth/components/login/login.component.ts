@@ -29,9 +29,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private authServer: AuthService,
     private tokenService: TokenService,
-    private http: HttpClient,
-    private service: AuthService,
-    private route: Router
   ) {
     localStorage.clear();
   }
@@ -45,7 +42,7 @@ export class LoginComponent implements OnInit {
     console.log(this.form)
     this.authServer.login(this.form).subscribe(
       resp => {
-        // console.log(resp.headers.get('Authorization'))
+        console.log(resp.headers.get('Authorization'))
         this.tokenService.saveToken(resp.headers.get('Authorization'))
       },
       err => console.log(err)
