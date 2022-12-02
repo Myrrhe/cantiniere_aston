@@ -6,6 +6,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { LayoutComponent } from './layout/layout.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LayoutComponent,
     DashboardComponent,
     SideMenuComponent,
+    AdminHeaderComponent,
   ],
   imports: [
     CommonModule,
