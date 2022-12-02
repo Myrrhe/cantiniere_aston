@@ -1,13 +1,13 @@
 <div class="background">
 	<div class="left_area half-transparent">
-		<img src="../assets/images/logo.png" alt="lock" class="logo">
+		<img src="../assets/images/logo.png" alt="lock" class="logo" routerLink="">
 		<div class="title">
 			Bienvenu
 		</div>
 		<div class="text">
 			Veuillez entrer vos coordonnées s'il vous plaît
 		</div>
-		<button class="button button-login" routerLink="/login" routerLinkActive="active">SE CONNECTER</button>
+		<button class="button button-login" routerLink="/auth/login" routerLinkActive="active">SE CONNECTER</button>
 	</div>
 	<div class="right_area">
 		<form #userForm="ngForm" class="form-group half-transparent" (ngSubmit)="onSubmit()">

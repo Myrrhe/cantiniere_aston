@@ -2,20 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
-
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
-
-import { UserInfoComponent } from './features/admin/components/user-info/user-info.component';
-import { UserListComponent } from './features/admin/components/user-list/user-list.component';
-import { LoginComponent } from './features/auth/components/login/login.component';
-import { SigninComponent } from './features/auth/components/signup/signin.component';
+// import { UserInfoComponent } from './features/admin/components/user-info/user-info.component';
+// import { UserListComponent } from './features/admin/components/user-list/user-list.component';
+// import { ComponentsComponent } from './admin/components/components.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +19,9 @@ import { SigninComponent } from './features/auth/components/signup/signin.compon
     FooterComponent,
     NavbarComponent,
     PageNotFoundComponent,
-    UserListComponent,
-    UserInfoComponent,
-    LoginComponent,
-    SigninComponent,
+    // UserListComponent,
+    // UserInfoComponent,
+    // ComponentsComponent,
   ],
   imports: [
     BrowserModule,

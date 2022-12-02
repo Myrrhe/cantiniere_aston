@@ -3,13 +3,10 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 //
-// import { };
-//
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 // Interfaces
 import { Credential } from 'src/app/interfaces/credential';
-import { Token } from 'src/app/interfaces/token';
-
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -29,23 +26,27 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor(private authServer: AuthService, private http: HttpClient, private service: AuthService,private route:Router) {
+  constructor(
+    private authServer: AuthService,
+    private tokenService: TokenService,
+    private http: HttpClient,
+    private service: AuthService,
+    private route: Router
+  ) {
     localStorage.clear();
   }
 
   ngOnInit(): void {
-  //   if(this.form.valid){
-  // }
+    //   if(this.form.valid){
+    // }
   }
 
-  onSubmit(): void{
+  onSubmit(): void {
     console.log(this.form)
-
     this.authServer.login(this.form).subscribe(
       resp => {
-        console.log(resp.headers.get('Authorization'))
-        // localStorage.setItem('token', data)
-        
+        // console.log(resp.headers.get('Authorization'))
+        this.tokenService.saveToken(resp.headers.get('Authorization'))
       },
       err => console.log(err)
     )
