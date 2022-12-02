@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>{{jour}}</h2>
+
+<div id="dialogContent" >
+  
+    <div id="formulair">
+        <div class="platForm">
+            <input type="checkbox" [(ngModel)]="plat1Checked"> <label >{{plat1}}</label>
+            <div class="platFormChoix">
+                   <div class="choix">
+                       <input type="checkbox" [(ngModel)]="plat1SeulChecked"> <label>plat seul</label>
+                   </div>
+                  <div class="choix">
+                      <input type="checkbox" ng-model="Formule1" [(ngModel)]="plat1FormulChecked"> <label >formul</label>
+                   </div>
+            </div>
+           <select name="Quantité" class="Quantité" [(ngModel)]="QSelected">
+              <option ng-model="1">1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+           </div>
+
+
+         <div class="platForm">
+            <input type="checkbox" [(ngModel)]="plat2Checked"> <label>{{plat2}}</label>
+            <div class="platFormChoix">
+                   <div class="choix">
+                       <input type="checkbox" [(ngModel)]="plat2SeulChecked"> <label>plat seul</label>
+                   </div>
+                  <div class="choix">
+                      <input type="checkbox" [(ngModel)]="plat2FormulChecked"> <label>formule</label>
+                   </div>
+            </div>
+           <select name="Quantité" class="Quantité" [(ngModel)]="QSelected">
+              <option >1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+           </div>
+       
+    </div>
+    <div id="dialogphoto">
+        <img src="../../assets/plat 1.webp">
+    </div>
+   
+ 
+</div>
+
+<mat-dialog-actions >
+    <button class="DialogBtn" (click)="Ajouter()" >Ajouter au panier</button>
+    <button class="DialogBtn" (click)="onNoClick()">Annuler</button>
+</mat-dialog-actions>

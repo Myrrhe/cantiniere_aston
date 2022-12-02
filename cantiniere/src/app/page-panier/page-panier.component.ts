@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagePanierComponent implements OnInit {
 isAuth= false /* variable verfier si l'utilisature est connectée ou pas*/
+
+/* array de command qui ajouter dans le panier
+*/
 commands=[{
 jour:"lundi",
 plat:"plat1Name",
@@ -26,6 +29,7 @@ prix:23
     prix:10
     },
 ]
+/* total variable affich les sum de prix de commandes*/
  total = this.commands.reduce((accumulator, obj) => {
   return accumulator + obj.prix;
 }, 0);

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { TokenInterceptorProvider } from './helpers/token.interceptor';
 
@@ -17,7 +18,8 @@ import { CategoryPipe } from './pipes/category.pipe';
 import { DayPipe } from './pipes/day.pipe';
 
 import { PagePanierComponent } from './page-panier/page-panier.component';
-
+import { PopUpComponent } from './pop-up/pop-up.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,10 @@ import { PagePanierComponent } from './page-panier/page-panier.component';
     CategoryPipe,
     DayPipe,
     PagePanierComponent,
-  
+    PopUpComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,9 @@ import { PagePanierComponent } from './page-panier/page-panier.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]

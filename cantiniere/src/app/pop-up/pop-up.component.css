@@ -1,0 +1,50 @@
+h2{
+    font-family: 'Great Vibes', cursive;
+    font-size: 8vh;
+    text-align: center;
+}
+#dialogContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#formulair{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+.choix {
+display: flex;
+flex-direction: row;
+}
+#dialogphoto img{
+    width: 50%;
+    margin-left: 5%;
+}
+.platForm{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+}
+
+.platFormChoix{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+select{
+    margin-left: 6%;
+    height: 5%;
+    width: 10%;
+}
+.mat-dialog-actions{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+}
+.DialogBtn{
+width: 60%;
+margin-top: 2%;
+}
