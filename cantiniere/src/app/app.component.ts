@@ -18,7 +18,7 @@ export class AppComponent {
     ){}
 
     openDialog(){
-      this.dialogRef.open(PopUpComponent,{height:'100px',width:'100px',data:"right click"
+      this.dialogRef.open(PopUpComponent,{height:'80px',width:'100px',data:"right click"
     })
     }
 

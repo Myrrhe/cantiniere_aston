@@ -20,7 +20,7 @@ export class PopUpComponent implements OnInit {
   plat2FormulChecked:boolean=false
 
 ngOnInit() {
-  this.dialogRef.updateSize('40%', '40%')
+  this.dialogRef.updateSize('40%', '50%')
 
 }
 
