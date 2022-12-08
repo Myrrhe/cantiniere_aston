@@ -44,7 +44,7 @@ En tout premier :
 2) `cd cantiniere_aston` On se déplace dans le répertoire qu'on a cloné
 3) `git branch` On est censé obtenir * *main*
 4) `git checkout -b develop` On crée la branche develop
-5) `git pull origin ptoto` On met à jour develop
+5) `git pull origin develop` On met à jour develop
 
 
 On fera en général les choses de la manière suivante :
@@ -62,6 +62,11 @@ EN CAS DE CONFLITS :
 
 Il y a plusieurs manière de régler les conflits, celle présentée ici n'en est qu'une parmis d'autres.
 
+9)  `git rebase origin develop` On met à jour la branche. S'il y a des conflits, on les règle, puis on fait `git rebase --continue`
+10) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
+11) On crée la pull request
+12) On vérifie le code, puis on merge
+=======
     10)  `git rebase origin develop` On met à jour la branche. S'il y a des conflits, on les règle, puis on fait `git rebase --continue`
 
 11) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
