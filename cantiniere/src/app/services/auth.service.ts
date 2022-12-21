@@ -1,8 +1,14 @@
-// Lib
+/**
+ * Title : Authentification Service
+ * Description : 
+ * Author : Thierry Maurouzel
+ */
+
+// Imports
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-// env
+// Environment 
 import { environment } from 'src/app/environments/environment';
 // Interfaces
 import { Token } from 'src/app/interfaces/token';

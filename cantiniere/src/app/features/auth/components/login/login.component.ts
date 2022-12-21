@@ -1,7 +1,12 @@
+/**
+ * Title : Composant login
+ * Description : 
+ * Author : Thierry Maurouzel
+*/
+
+// Imports
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 //
 import { AuthService } from 'src/app/services/auth.service';
 // Interfaces
@@ -14,12 +19,6 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  // messageclass = ''
-  // message = ''
-  // Customerid: any;
-  // editdata: any;
-  // responsedata: any;
 
   form: Credential = {
     email: '',

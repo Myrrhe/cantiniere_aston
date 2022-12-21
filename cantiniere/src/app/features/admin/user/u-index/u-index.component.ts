@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/app/environments/environment';
+// import { UserListService } from 'src/app/services/';
 
 @Component({
   selector: 'app-u-index',
@@ -11,16 +12,23 @@ export class UIndexComponent implements OnInit {
 
   private apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) { }
+  // constructor(private UserListService: UserListService) { }
+
 
   ngOnInit(): void {
-    this.http.get(`${this.apiUrl}/user/findall`).subscribe(
-      data => console.log(data)
-    )
+    // this.onGetUsers();
   }
 
+//   onGetUsers(): void {
+//     this.UserListService.getUsers().subscribe(
+//       (response) => {
+//         this.users = (response),
+//         console.table(this.users),
+//         (error:any) => console.log(error)
+//       },
+//     )
+//   } 
 
-  // getUsers(): Observable<User[]> {
-  //   return this.http.get<User[]>(`${this.apiUrl}/user/findall`);
-  // }
+// }
+
 }

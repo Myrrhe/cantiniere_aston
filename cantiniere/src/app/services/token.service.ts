@@ -1,3 +1,9 @@
+/**
+ * Title : File to token service
+ * Description : 
+ * Author : Thierry Maurouzel
+*/
+
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -33,3 +39,5 @@ export class TokenService {
         return localStorage.getItem('token')
     }
 }
+
+// Ajouter une procédure de rafraissement de token

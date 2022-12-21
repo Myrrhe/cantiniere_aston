@@ -1,3 +1,10 @@
+/**
+ * Title : Token Interceptor
+ * Description : This file creates an interceptor that will intercept requests, create a clone of the request containing our authentication token and then send our clone instead of the original request
+ * Author : Thierry Maurouzel
+ */
+
+// imports
 import { Injectable } from '@angular/core';
 import {
   HttpRequest,
@@ -6,7 +13,7 @@ import {
   HttpInterceptor,
   HTTP_INTERCEPTORS
 } from '@angular/common/http';
-import { catchError, Observable, Subject, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { TokenService } from '../services/token.service';
 
 @Injectable()
@@ -38,13 +45,12 @@ export class TokenInterceptor implements HttpInterceptor {
           return throwError('Session Expired')
         })
       )
-    }
-    
-    
+    }   
     return next.handle(request);
   }
 }
 
+// exports
 export const TokenInterceptorProvider = {
   provide: HTTP_INTERCEPTORS,
   useClass: TokenInterceptor,

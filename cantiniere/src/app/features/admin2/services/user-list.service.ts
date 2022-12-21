@@ -24,7 +24,7 @@ export class UserListService {
   // }
 
   // createUser(user: User): Observable<User> {
-  //   return this.http.put<User>(`${this.apiUrl}/user/register`, user);
+    //   return this.http.put<User>(`${this.apiUrl}/user/register`, user);
   // }
 
   // deleteUser(id: number): Observable<User> {
