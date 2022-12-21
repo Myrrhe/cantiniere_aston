@@ -41,6 +41,7 @@ export class TokenInterceptor implements HttpInterceptor {
           if(error.status === 401){ // If we get an 401 error (token expired), we delete the actual token
             this.tokenService.clearTokenExpired()
           }
+
           // this.apiErrorService.sendError(error.error.message)
           return throwError('Session Expired')
         })

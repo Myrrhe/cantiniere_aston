@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     console.log(this.form)
     this.authServer.login(this.form).subscribe(
       resp => {
-        // console.log(resp.headers.get('Authorization'))
+        console.log(resp.headers.get('Authorization'))
         this.tokenService.saveToken(resp.headers.get('Authorization'))
       },
       err => console.log(err)
