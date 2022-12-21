@@ -52,8 +52,12 @@ En tout premier :
 5) `git pull origin ptoto` On met à jour proto
 =======
 4) `git checkout -b develop` On crée la branche develop
+<<<<<<< HEAD
 5) `git pull origin ptoto` On met à jour develop
 >>>>>>> develop
+=======
+5) `git pull origin develop` On met à jour develop
+>>>>>>> d34e1bbd46709fc83bab82da89a35d49e751099e
 
 
 On fera en général les choses de la manière suivante :
@@ -77,6 +81,11 @@ EN CAS DE CONFLITS :
 
 Il y a plusieurs manière de régler les conflits, celle présentée ici n'en est qu'une parmis d'autres.
 
+9)  `git rebase origin develop` On met à jour la branche. S'il y a des conflits, on les règle, puis on fait `git rebase --continue`
+10) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
+11) On crée la pull request
+12) On vérifie le code, puis on merge
+=======
     10)  `git rebase origin develop` On met à jour la branche. S'il y a des conflits, on les règle, puis on fait `git rebase --continue`
 
 11) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
