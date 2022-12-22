@@ -13,6 +13,7 @@ import { MenuService } from 'src/app/services/menu.service';
 export class PageNotFoundComponent implements OnInit {
   image!: Image;
   menus!: Menu[];
+  menuImages!: Image[];
 
   constructor(
     private ingredientService: IngredientService,
@@ -22,12 +23,18 @@ export class PageNotFoundComponent implements OnInit {
 
   ngOnInit(): void {
     this.ingredientService.findImg(1).subscribe((data) => {
-      console.log(data)
       this.image = data;
     });
 
     this.menuService.findAll().subscribe((data: any) => {
       this.menus = data;
+      this.menus.forEach(menu => {
+        let img!: Image;
+        this.menuService.findImg(menu.id!).subscribe((data) => {
+          img = data;
+        })
+        this.menuImages.push(img);
+      });
     });
   }
 

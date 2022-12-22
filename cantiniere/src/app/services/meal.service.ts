@@ -52,6 +52,8 @@ export class MealService {
   }
 
   // PATCH : /meal/update/{mealId}
+  // Warning : If you want to add a AvailableForWeeksAndDay in the Meal, you need to put the AvailableForWeeksAndDays
+  // already presents in the meal PLUS the one you want to add
   update(
     description: string,
     label: string,
