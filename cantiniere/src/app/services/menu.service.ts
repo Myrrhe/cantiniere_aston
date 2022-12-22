@@ -103,7 +103,7 @@ export class MenuService {
     return this.httpClient.get<Menu[]>(`${this.urlMenu}/findall`);
   }
 
-  // GET : /menu/findall/{menuid}
+  // GET : /menu/find/{menuid}
   find(menuId: number): Observable<Menu[]> {
     return this.httpClient.get<Menu[]>(`${this.urlMenu}/find/${menuId}`);
   }

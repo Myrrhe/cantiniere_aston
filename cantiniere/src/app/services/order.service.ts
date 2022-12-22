@@ -44,4 +44,34 @@ export class OrderService {
   cancel(orderId: number): Observable<any> {
     return this.httpClient.patch(`${this.urlOrder}/cancel/${orderId}`, {}, this.httpOptions);
   }
+
+  // GET : /order/findallforusertoday/{userId}
+  findAllForUserToday(userId: number): Observable<Order> {
+    return this.httpClient.get<Order>(`${this.urlOrder}/findallforusertoday/${userId}`);
+  }
+
+  // GET : /order/findallforuser/{userId}
+  findAllForUser(userId: number): Observable<Order> {
+    return this.httpClient.get<Order>(`${this.urlOrder}/findallforuser/${userId}`);
+  }
+
+  // GET : /order/findallbetweendateinstatus
+  findAllBetweenDateInStatus(): Observable<Order> {
+    return this.httpClient.get<Order>(`${this.urlOrder}/findallbetweendateinstatus`);
+  }
+
+  // GET : /order/findall
+  findAll(): Observable<Order> {
+    return this.httpClient.get<Order>(`${this.urlOrder}/findall`);
+  }
+
+  // GET : /order/findall/{menuId}
+  find(menuId: number): Observable<Order> {
+    return this.httpClient.get<Order>(`${this.urlOrder}/find/${menuId}`);
+  }
+
+  // GET : /order/computeprice/{orderId}/{constraintId}
+  computeprice(orderId: number, constraintId: number): Observable<Order> {
+    return this.httpClient.get<Order>(`${this.urlOrder}/computeprice/${orderId}/${constraintId}`);
+  }
 }
