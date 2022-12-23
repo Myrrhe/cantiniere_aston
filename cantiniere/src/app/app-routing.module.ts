@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 // import { LoginComponent } from './components/auth/login/login.component';
 // import { SigninComponent } from './components/auth/signup/signin.component';
@@ -22,7 +23,9 @@ const routes: Routes = [
   // { path: 'login', component: LoginComponent },
   // { path: 'signin', component: SigninComponent },
   { path: '404', component: PageNotFoundComponent },
+  { path: 'registration', component: RegistrationComponent },
   { path: '**', pathMatch: 'full', redirectTo: '/404'},
+    
 ];
 
 @NgModule({
