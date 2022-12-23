@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Order } from '../interfaces/order';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrderService {
   httpOptions = {
@@ -15,14 +15,17 @@ export class OrderService {
   };
   urlOrder: string = `${environment.apiUrl}/order`;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private readonly httpClient: HttpClient) { }
 
   // PUT : /order/add
-  add(userId: number, constraintId: number, quantity: any[]): Observable<Order> {
+  add(
+    userId: number,
+    constraintId: number,
+    quantity: any[]): Observable<Order> {
     return this.httpClient.put<Order>(`${this.urlOrder}/add`, {
       userId: userId,
       constraintId: constraintId,
-      quantity: quantity
+      quantity: quantity,
     }, this.httpOptions);
   }
 
@@ -31,7 +34,7 @@ export class OrderService {
     return this.httpClient.patch(`${this.urlOrder}/update/${orderId}`, {
       userId: userId,
       constraintId: constraintId,
-      quantity: quantity
+      quantity: quantity,
     }, this.httpOptions);
   }
 

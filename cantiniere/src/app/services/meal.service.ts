@@ -16,7 +16,7 @@ export class MealService {
   };
   urlMeal: string = `${environment.apiUrl}/meal`;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private readonly httpClient: HttpClient) { }
 
   // PUT : /meal/add
   add(

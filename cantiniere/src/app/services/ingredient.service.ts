@@ -16,7 +16,7 @@ export class IngredientService {
   };
   urlIngredient: string = `${environment.apiUrl}/ingredient`;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private readonly httpClient: HttpClient) { }
 
   // PUT : /ingredient/add
   add(description: string, label: string, imagePath: string, image64: string): Observable<Ingredient> {

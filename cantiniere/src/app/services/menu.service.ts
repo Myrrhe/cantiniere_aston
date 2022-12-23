@@ -16,7 +16,7 @@ export class MenuService {
   };
   urlMenu: string = `${environment.apiUrl}/menu`;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private readonly httpClient: HttpClient) { }
 
   // PUT : /menu/add
   add(
@@ -33,7 +33,7 @@ export class MenuService {
       label: label,
       image: {
         imagePath: imagePath,
-        image64: image64
+        image64: image64,
       },
       priceDF: priceDF,
       availableForWeeksAndDays: availableForWeeksAndDays,
@@ -65,7 +65,7 @@ export class MenuService {
       label: label,
       image: {
         imagePath: imagePath,
-        image64: image64
+        image64: image64,
       },
       priceDF: priceDF,
       availableForWeeksAndDays: availableForWeeksAndDays,

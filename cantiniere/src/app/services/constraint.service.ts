@@ -15,7 +15,7 @@ export class ConstraintService {
   };
   urlConstraint: string = `${environment.apiUrl}/constraint`;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private readonly httpClient: HttpClient) { }
 
   // PUT : /constraint/add
   add(orderTimeLimit: string, maximumOrderPerDay: number, rateVAT: number): Observable<Constraint> {
