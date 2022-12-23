@@ -1,12 +1,11 @@
 /**
  * Title : Composant login
- * Description : 
+ * Description :
  * Author : Thierry Maurouzel
 */
 
 // Imports
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 //
 import { AuthService } from 'src/app/services/auth.service';
 // Interfaces
@@ -26,8 +25,8 @@ export class LoginComponent implements OnInit {
   };
 
   constructor(
-    private authServer: AuthService,
-    private tokenService: TokenService,
+    private readonly authServer: AuthService,
+    private readonly tokenService: TokenService,
   ) {
     localStorage.clear();
   }
@@ -38,14 +37,14 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.form)
+    console.log(this.form);
     this.authServer.login(this.form).subscribe(
       resp => {
-        console.log(resp.headers.get('Authorization'))
-        this.tokenService.saveToken(resp.headers.get('Authorization'))
+        console.log(resp.headers.get('Authorization'));
+        this.tokenService.saveToken(resp.headers.get('Authorization'));
       },
-      err => console.log(err)
-    )
+      err => console.log(err),
+    );
   }
 }
 

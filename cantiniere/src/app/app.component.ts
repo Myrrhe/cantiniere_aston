@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   constructor(
-    private router: Router
+    private readonly router: Router
   ) {}
   /**
    * The title of the page
