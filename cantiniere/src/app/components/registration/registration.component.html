@@ -8,6 +8,7 @@
 		<div class="text">
 			Veuillez entrer vos coordonnées s'il vous plaît
 		</div>
+    <button class="button color-black" routerLink="/auth/login" routerLinkActive="active">CREER UN COMPTE</button>
 	</div>
 	<div class="right_area">
 		<form #userForm="ngForm" class="form-group half-transparent" (ngSubmit)="createUser()">
@@ -93,12 +94,12 @@
             <!-- <div class="input_form">
             	<label for="password" class="placeholder" >Mot de passe</label>
                 <input type="password" name="password" id="password" placeholder="Mot de passe" class="standart-input" matInput required [(ngModel)]="userInfo.password"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"(change)="cs()" >
-          
+
             </div> -->
 			<div class="input_form">
-            	<label for="password" class="placeholder" >Mot de passe</label>
+            	<label for="password" class="placeholder" hidden>Mot de passe</label>
                 <input type="password" name="password" id="password" placeholder="Mot de passe" class="standart-input" matInput required [(ngModel)]="userInfo.password"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" >
-          
+
             </div>
 
 
