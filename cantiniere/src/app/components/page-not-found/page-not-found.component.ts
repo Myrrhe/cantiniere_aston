@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IngredientService } from "../../services/ingredient.service";
+import { Image } from "../../interfaces/image";
+import { Menu } from 'src/app/interfaces/menu';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,12 +11,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./page-not-found.component.css']
 })
 export class PageNotFoundComponent implements OnInit {
+  image!: Image;
+  menus!: Menu[];
+  menuImages!: Image[];
 
   constructor(
-    public router: Router
+    private ingredientService: IngredientService,
+    private menuService: MenuService,
+    public router: Router,
   ) { }
 
   ngOnInit(): void {
-  }
+    this.ingredientService.findImg(1).subscribe((data) => {
+      this.image = data;
+    });
 
+    this.menuService.findAll().subscribe((data: any) => {
+      this.menus = data;
+    });
+  }
 }
