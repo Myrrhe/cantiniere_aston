@@ -25,9 +25,9 @@ Pour voir sur quelle branche vous êtes : `git branch`
 
 Pour aller d'une branche à l'autre : `git checkout la-branche-ou-je-veux-aller`
 
-Pour créer une nouvelle branche : `git checkout -b ma-branche` (on créera les nouvelles branches à partir de develop à priori)
+Pour créer une nouvelle branche : `git checkout -b ma-branche` (on créera les nouvelles branches à partir de proto à priori)
 
-Pour puller (recopier) une branche : `git pull origin la-branche` (en général, on fera `git pull origin develop`)
+Pour puller (recopier) une branche : `git pull origin la-branche` (en général, on fera `git pull origin proto`)
 
 Pour ajouter des fichiers à un commit : `git add --all`
 
@@ -49,13 +49,13 @@ En tout premier :
 
 On fera en général les choses de la manière suivante :
 
-1)  `git branch` On vérifie qu'on est bien sur develop. Si on y est pas -> `git checkout develop`
+1)  `git branch` On vérifie qu'on est bien sur proto. Si on y est pas -> `git checkout proto`
 2)  `git checkout -b nouvelle-branche` Ça nous téléporte automatiquement sur la nouvelle branche, pas besoin de refaire de checkout
 3)  Codage. N'oubliez pas Ctrl+S !
 4)  `git add --all` On ajoute les fichiers crées/modifiés
 5)  `git commit -m "Message de commit"` Essayez de mettreun message de commit explicit
-6)  `git checkout develop` On revient sur develop
-7)  `git pull origin develop` On met à jour develop
+6)  `git checkout proto` On revient sur proto
+7)  `git pull origin proto` On met à jour proto
 8)  `git checkout nouvelle-branche` On revient sur la branche crée initialement
 
 EN CAS DE CONFLITS :
@@ -66,7 +66,10 @@ Il y a plusieurs manière de régler les conflits, celle présentée ici n'en es
 10) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
 11) On crée la pull request
 12) On vérifie le code, puis on merge
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> develop
     10)  `git rebase origin develop` On met à jour la branche. S'il y a des conflits, on les règle, puis on fait `git rebase --continue`
 
 11) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
