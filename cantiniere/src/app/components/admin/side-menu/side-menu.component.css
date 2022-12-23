@@ -1,0 +1,81 @@
+/* nav {
+    padding-left: 10px;
+}
+
+#sidemenu {
+    list-style: none;
+    padding: 0px;
+}
+#sidemenu ul{
+    list-style: none;
+    padding: 8px;
+}
+
+.simple_link {
+    margin-bottom: 8px;
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: black;
+} */
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #21232d;
+    color: #9799ab;
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px;
+}
+
+.sidebar-title>span {
+    display: none;
+}
+
+.sidebar-brand {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+.sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+}
+
+.sidebar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.sidebar-list-item>a {
+    text-decoration: none;
+    color: #9799ab;
+}
+
+.sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+    /*
+      the z-index of the ApexCharts is 11
+      we want the z-index of the sidebar higher so that
+      the charts are not showing over the sidebar 
+      on small screens
+    */
+    z-index: 12 !important;
+}

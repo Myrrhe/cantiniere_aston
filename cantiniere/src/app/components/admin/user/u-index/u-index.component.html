@@ -1,9 +1,34 @@
 <p>u-index works!</p>
 
-<!-- <table>
-    <tr *ngFor="let user of Users; index as i">
-      <td>{{ i + 1 }}</td>
-      <td>{{ user.name }}</td>
-      <td>{{ user.quantity }}</td>
-    </tr>
-  </table> -->
+<div>
+  <table style="border: solid 1px black;  width: 100%;">
+    <thead style="border-bottom: solid 1px black;">
+      <tr>
+        <th>Action</th>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Sexe</th>
+        <th>Adresse</th>
+        <th>Code postal</th>
+        <th>Balance</th>
+        <th>Date de création</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList">
+        <td><a [routerLink]="['edit', user.id]">Editer</a></td>
+        <td>{{ user.id }}</td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.sex }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.postalCode }}</td>
+        <td>{{ user.wallet }}€</td>
+        <td>{{ user.registrationDate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
