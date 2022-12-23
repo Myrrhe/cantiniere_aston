@@ -16,8 +16,8 @@ export class PageNotFoundComponent implements OnInit {
   menuImages!: Image[];
 
   constructor(
-    private ingredientService: IngredientService,
-    private menuService: MenuService,
+    private readonly ingredientService: IngredientService,
+    private readonly menuService: MenuService,
     public router: Router,
   ) { }
 
