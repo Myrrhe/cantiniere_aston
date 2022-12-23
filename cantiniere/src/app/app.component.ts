@@ -20,6 +20,13 @@ export class AppComponent {
 
   // This method is used to check the current URL, to decide which component to include in the page
   hasRoute(route: string) {
-    return this.router.url == route;
+    return this.router.url === route;
+  }
+
+  hasRouteBeginBy(route: string) {
+    console.log(this.router.url);
+    console.log(route);
+    console.log(this.router.url.startsWith(route));
+    return this.router.url.startsWith(route);
   }
 }
