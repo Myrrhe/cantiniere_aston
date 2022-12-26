@@ -11,5 +11,5 @@
 <div>Plats pour la semaine</div>
 <br>
 <div *ngFor="let meal of mealAvailableForThisWeek">
-  <div>{{meal.label}} (meal.category | categoryLabel)</div>
+  <div>{{meal.label}} ({{meal.category | categoryLabel}})</div>
 </div>
