@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
+@Pipe({
+  name: 'categoryLabel'
 })
-export class CategoryService {
-  getLabelFromId(id: number) {
-    switch (id) {
+export class CategoryPipe implements PipeTransform {
+
+  transform(value: number): string {
+    switch (value) {
       case 0:
         return 'Inconnu';
       case 1:
@@ -31,7 +32,8 @@ export class CategoryService {
       case 11:
         return 'En-cas';
       default:
-        return `Error: Unexpected category id encountered (${id})`;
+        return `Error: Unexpected category id encountered (${value}) (should be 0-11)`;
     }
   }
+
 }

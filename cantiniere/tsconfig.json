@@ -19,6 +19,9 @@
     "importHelpers": true,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": false,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
     "target": "es2017",
     "module": "es2020",
     "lib": [
