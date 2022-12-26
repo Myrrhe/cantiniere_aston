@@ -6,7 +6,7 @@ import { Ingredient } from '../interfaces/ingredient';
 import { environment } from './../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class IngredientService {
   httpOptions = {
@@ -17,6 +17,8 @@ export class IngredientService {
   urlIngredient: string = `${environment.apiUrl}/ingredient`;
 
   constructor(private readonly httpClient: HttpClient) { }
+
+  // ==================== API RELATED METHODS ====================
 
   // PUT : /ingredient/add
   add(description: string, label: string, imagePath: string, image64: string): Observable<Ingredient> {

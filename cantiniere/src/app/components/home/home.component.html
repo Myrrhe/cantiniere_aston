@@ -1,6 +1,9 @@
-<div *ngFor="let menu of menuAvailableForThisWeek">
+<!-- <div *ngFor="let menu of menuAvailableForThisWeek">
   <div *ngFor="let meal of menu.meals">
     <div>{{meal.category}}</div>
     <div>{{meal.label}}</div>
   </div>
+</div> -->
+<div *ngFor="let meal of mealAvailableForThisWeek">
+  <div>{{meal.label}}</div>
 </div>

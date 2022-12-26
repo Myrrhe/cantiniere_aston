@@ -1,5 +1,5 @@
-import { AvailableForWeeksAndDays } from "./available-for-weeks-and-days";
-import { Ingredient } from "./ingredient";
+import { AvailableForWeeksAndDays } from './available-for-weeks-and-days';
+import { Ingredient } from './ingredient';
 
 export interface Meal {
   id?: number

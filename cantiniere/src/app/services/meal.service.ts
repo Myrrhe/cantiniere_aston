@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { Meal } from '../interfaces/meal';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MealService {
   httpOptions = {
@@ -17,6 +17,8 @@ export class MealService {
   urlMeal: string = `${environment.apiUrl}/meal`;
 
   constructor(private readonly httpClient: HttpClient) { }
+
+  // ==================== API RELATED METHODS ====================
 
   // PUT : /meal/add
   add(
@@ -85,21 +87,25 @@ export class MealService {
   }
 
   // GET : /meal/findallavailableforweekandday/{weeknumber}/{daynumber}
+  // Warning : Return the meals without an AvailableForWeeksAndDays as well
   findAllAvailableForWeekAndDay(weekNumber: number, dayNumber: number): Observable<Meal[]> {
     return this.httpClient.get<Meal[]>(`${this.urlMeal}/findallavailableforweekandday/${weekNumber}/${dayNumber}`);
   }
 
   // GET : /meal/findallavailableforweek/{weeknumber}
+  // Warning : Return the meals without an AvailableForWeeksAndDays as well
   findAllAvailableForWeek(weekNumber: number): Observable<Meal[]> {
     return this.httpClient.get<Meal[]>(`${this.urlMeal}/findallavailableforweek/${weekNumber}`);
   }
 
   // GET : /meal/findallavailablefortoday
+  // Warning : Return the meals without an AvailableForWeeksAndDays as well
   findAllAvailableForToday(): Observable<Meal[]> {
     return this.httpClient.get<Meal[]>(`${this.urlMeal}/findallavailablefortoday`);
   }
 
   // GET : /meal/findallavailableforthisweek
+  // Warning : Return the meals without an AvailableForWeeksAndDays as well
   findAllAvailableForThisWeek(): Observable<Meal[]> {
     return this.httpClient.get<Meal[]>(`${this.urlMeal}/findallavailableforthisweek`);
   }

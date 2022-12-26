@@ -6,7 +6,7 @@ import { environment } from 'src/app/environments/environment';
 @Component({
   selector: 'app-u-index',
   templateUrl: './u-index.component.html',
-  styleUrls: ['./u-index.component.css']
+  styleUrls: ['./u-index.component.css'],
 })
 export class UIndexComponent implements OnInit {
 
@@ -27,7 +27,7 @@ export class UIndexComponent implements OnInit {
 //         (error:any) => console.log(error)
 //       },
 //     )
-//   } 
+//   }
 
 // }
 

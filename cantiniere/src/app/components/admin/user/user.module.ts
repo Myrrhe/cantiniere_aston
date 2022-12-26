@@ -13,11 +13,11 @@ import { UDeleteComponent } from './u-delete/u-delete.component';
     UIndexComponent,
     UEditComponent,
     UAddComponent,
-    UDeleteComponent
+    UDeleteComponent,
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
-  ]
+    UserRoutingModule,
+  ],
 })
 export class UserModule { }

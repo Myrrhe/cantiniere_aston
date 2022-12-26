@@ -19,7 +19,7 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    RouterModule 
-  ]
+    RouterModule,
+  ],
 })
 export class AdminModule { }

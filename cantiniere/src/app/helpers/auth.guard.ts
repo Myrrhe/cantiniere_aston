@@ -1,6 +1,6 @@
 /**
  * Title : File to create a guardian
- * Description : 
+ * Description :
  * Author : Thierry Maurouzel
 */
 
@@ -15,8 +15,8 @@ import { TokenService } from '../services/token.service';
 })
 export class AuthGuard implements CanActivate {
   constructor(
-    private router: Router,
-    private tokenService: TokenService
+    private readonly router: Router,
+    private readonly tokenService: TokenService
   ) { }
 
   canActivate(
@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     if(this.tokenService.isLogged()){
-      return true
+      return true;
     }
 
     return this.router.navigate(['auth']);
