@@ -1,64 +1,52 @@
-<!-- <nav>
-    <a class="simple_link" [routerLink]="['/']">Retour accueil</a>
-    <ul  id="sidemenu">
-        <li><a [routerLink]="['dashboard']">Dashboard</a></li>
-        <li>> User</li>
-        <ul>
-            <li><a [routerLink]="['user']">Liste</a></li>
-            <li><a [routerLink]="['user/add']">Ajouter</a></li>
-        </ul>
-        <li>> Menu</li>
-        <ul>
-            <li><a [routerLink]="['']">Liste</a></li>
-            <li><a [routerLink]="['']">Ajouter</a></li>
-        </ul>
-    </ul>
-
-</nav> -->
+<!--
+Title : Html side menu admin part
+Description : 
+Author : Thierry Maurouzel
+-->
 
 <aside id="sidebar">
-    <div class="sidebar-title">
-      <div class="sidebar-brand">
-        <span class="material-icons-outlined">inventory</span> Bob's Inventory
-      </div>
-      <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+  <div class="sidebar-title">
+    <div class="sidebar-brand">
+      <span class="material-icons-outlined">inventory</span> Bob's Inventory
     </div>
+    <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+  </div>
 
-    <ul class="sidebar-list">
+  <ul class="sidebar-list">
+    <a [routerLink]="['dashboard']">
       <li class="sidebar-list-item">
-        <a href="#" target="_blank">
-          <span class="material-icons-outlined">dashboard</span> Dashboard
-        </a>
+        <span class="material-icons-outlined">Tableau de bord</span>
       </li>
+    </a>
+    <a [routerLink]="['user']">
       <li class="sidebar-list-item">
-        <a href="#" target="_blank">
-          <span class="material-icons-outlined">inventory_2</span> Products
-        </a>
+        <span class="material-icons-outlined">Utilisateurs</span>
       </li>
+    </a>
+    <a [routerLink]="['']">
       <li class="sidebar-list-item">
-        <a href="#" target="_blank">
-          <span class="material-icons-outlined">fact_check</span> Inventory
-        </a>
+        <span class="material-icons-outlined">Menu</span>
       </li>
-      <li class="sidebar-list-item">
-        <a href="#" target="_blank">
-          <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
-        </a>
-      </li>
-      <li class="sidebar-list-item">
-        <a href="#" target="_blank">
-          <span class="material-icons-outlined">shopping_cart</span> Sales Orders
-        </a>
-      </li>
-      <li class="sidebar-list-item">
-        <a href="#" target="_blank">
-          <span class="material-icons-outlined">poll</span> Reports
-        </a>
-      </li>
-      <li class="sidebar-list-item">
-        <a href="#" target="_blank">
-          <span class="material-icons-outlined">settings</span> Settings
-        </a>
-      </li>
-    </ul>
-  </aside>
+    </a>
+    <li class="sidebar-list-item">
+      <a href="#">
+        <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
+      </a>
+    </li>
+    <li class="sidebar-list-item">
+      <a href="#">
+        <span class="material-icons-outlined">shopping_cart</span> Sales Orders
+      </a>
+    </li>
+    <li class="sidebar-list-item">
+      <a href="#">
+        <span class="material-icons-outlined">poll</span> Reports
+      </a>
+    </li>
+    <li class="sidebar-list-item">
+      <a href="#">
+        <span class="material-icons-outlined">Configuration</span> Settings
+      </a>
+    </li>
+  </ul>
+</aside>
