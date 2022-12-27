@@ -4,48 +4,65 @@ Description :
 Author : Thierry Maurouzel
 -->
 
+<!-- A faire :
+- Faire que le menu selectionné soit visible
+- Travailler le CSS
+- Ajouter des icones
+-->
+
 <aside id="sidebar">
   <div class="sidebar-title">
     <div class="sidebar-brand">
-      <span class="material-icons-outlined">inventory</span> Bob's Inventory
+      <a [routerLink]="['/']">
+        <span class="material-icons-outlined"></span> Bob's Inventory
+      </a>
     </div>
-    <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
   </div>
 
+  <span>
+    <hr />
+  </span>
+
   <ul class="sidebar-list">
-    <a [routerLink]="['dashboard']">
-      <li class="sidebar-list-item">
+
+    <li class="sidebar-list-item">
+      <a [routerLink]="['dashboard']">
         <span class="material-icons-outlined">Tableau de bord</span>
-      </li>
-    </a>
-    <a [routerLink]="['user']">
-      <li class="sidebar-list-item">
+      </a>
+    </li>
+
+
+    <li class="sidebar-list-item">
+      <a [routerLink]="['user']">
         <span class="material-icons-outlined">Utilisateurs</span>
-      </li>
-    </a>
-    <a [routerLink]="['']">
-      <li class="sidebar-list-item">
+      </a>
+    </li>
+
+
+    <li class="sidebar-list-item">
+      <a [routerLink]="['']">
         <span class="material-icons-outlined">Menu</span>
-      </li>
-    </a>
+      </a>
+    </li>
+
     <li class="sidebar-list-item">
       <a href="#">
-        <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
+        <span class="material-icons-outlined">Configuration</span> 
       </a>
     </li>
     <li class="sidebar-list-item">
       <a href="#">
-        <span class="material-icons-outlined">shopping_cart</span> Sales Orders
+        <span class="material-icons-outlined">Configuration</span> 
       </a>
     </li>
     <li class="sidebar-list-item">
       <a href="#">
-        <span class="material-icons-outlined">poll</span> Reports
+        <span class="material-icons-outlined">Configuration</span> 
       </a>
     </li>
     <li class="sidebar-list-item">
       <a href="#">
-        <span class="material-icons-outlined">Configuration</span> Settings
+        <span class="material-icons-outlined">Configuration</span> 
       </a>
     </li>
   </ul>
