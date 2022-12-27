@@ -13,7 +13,7 @@ import { MenuService } from 'src/app/services/menu.service';
 export class HomeComponent implements OnInit {
 
   mealAvailableForThisWeek: Meal[] = [];
-  menuAvailableForThisWeek: Menu[] = [];
+  menuAvailableForThisWeek: [Menu, number[]][][] = [[], [], [], [], [], [], []];
 
   constructor(
     private readonly dateService: DateService,
@@ -27,7 +27,29 @@ export class HomeComponent implements OnInit {
     });
 
     this.menuService.findAll().subscribe((data: any) => {
-      this.menuAvailableForThisWeek = this.dateService.filterAvailableForThisWeek(data);
+      const dataFiltered: Menu[] = this.dateService.filterAvailableForThisWeek(data);
+      for (const menu of dataFiltered) {
+        const categories: number[] = [];
+        for (const meal of menu.meals) {
+          if (!categories.some((category: number): boolean => meal.category === category)) {
+            categories.push(meal.category);
+          }
+        }
+        categories.sort((category1: number, category2: number): number => category1 - category2);
+        for (let i = 1; i <= 7; i++) {
+          if (this.dateService.isAvailableForDayOfThisWeek(menu, i)) {
+            this.menuAvailableForThisWeek[i].push([menu, categories]);
+          }
+        }
+      }
     });
+  }
+
+  sortMealsByCategory(meals: Meal[]): Meal[] {
+    return meals.sort((meal1: Meal, meal2: Meal): number => meal1.category - meal2.category);
+  }
+
+  createRange(len: number){
+    return Array.from({length: len}).fill(0).map((_, index) => index + 1);
   }
 }

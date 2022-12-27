@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'day'
+  name: 'day',
 })
 export class DayPipe implements PipeTransform {
 
@@ -25,5 +25,4 @@ export class DayPipe implements PipeTransform {
         return `Error: Unexpected day number encountered (${value}) (should be 1-7)`;
     }
   }
-
 }

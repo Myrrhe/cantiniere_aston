@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'categoryLabel'
+  name: 'categoryLabel',
 })
 export class CategoryPipe implements PipeTransform {
 
@@ -35,5 +35,4 @@ export class CategoryPipe implements PipeTransform {
         return `Error: Unexpected category id encountered (${value}) (should be 0-11)`;
     }
   }
-
 }

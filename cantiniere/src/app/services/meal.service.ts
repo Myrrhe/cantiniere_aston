@@ -36,7 +36,7 @@ export class MealService {
       label: label,
       image: {
         imagePath: imagePath,
-        image64: image64
+        image64: image64,
       },
       priceDF: priceDF,
       availableForWeeksAndDays: availableForWeeksAndDays,
@@ -72,7 +72,7 @@ export class MealService {
       label: label,
       image: {
         imagePath: imagePath,
-        image64: image64
+        image64: image64,
       },
       priceDF: priceDF,
       availableForWeeksAndDays: availableForWeeksAndDays,

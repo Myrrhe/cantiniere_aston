@@ -1,12 +1,23 @@
 <div>Menus pour la semaine</div>
 <br>
-<div *ngFor="let menu of menuAvailableForThisWeek">
-  <div *ngFor="let meal of menu.meals">
-    <div>{{meal.category | categoryLabel}}</div>
-    <div>{{meal.label}}</div>
+<div *ngFor="let day of createRange(7)">
+  {{day | day}}
+  <div *ngIf="menuAvailableForThisWeek[day - 1].length === 0" class="pad">
+    Rien (pour l'instant…)
+  </div>
+  <div *ngFor="let menu of menuAvailableForThisWeek[day - 1]">
+    <div *ngFor="let category of menu[1]" class="pad">
+      {{category | categoryLabel}}
+      <div *ngFor="let meal of menu[0].meals">
+        <div *ngIf="meal.category === category" class="pad">
+          {{meal.label}}
+        </div>
+      </div>
+    </div>
     <br>
   </div>
 </div>
+
 <br>
 <div>Plats pour la semaine</div>
 <br>

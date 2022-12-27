@@ -90,8 +90,14 @@ export class DateService {
     if (mealsOrMenus.length < 1) {
       return [];
     }
-    return mealsOrMenus.filter((mealOrMenu: Meal & Menu) => {
-      return mealOrMenu.availableForWeeksAndDays.values != null;
-    });
+    return mealsOrMenus.filter((mealOrMenu: Meal & Menu) => mealOrMenu.availableForWeeksAndDays.values != null);
+  }
+
+  isAvailableForWeekAndDay(mealOrMenu: Meal | Menu, week: number, day: number): boolean {
+    return mealOrMenu.availableForWeeksAndDays.values.some((wd: WeekAndDays) => week === wd.week && day === wd.day);
+  }
+
+  isAvailableForDayOfThisWeek(mealOrMenu: Meal | Menu, day: number): boolean {
+    return mealOrMenu.availableForWeeksAndDays.values.some((wd: WeekAndDays) => this.getCurrentWeekNumber() === wd.week && day === wd.day);
   }
 }
