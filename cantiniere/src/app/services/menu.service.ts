@@ -16,7 +16,9 @@ export class MenuService {
   };
   urlMenu: string = `${environment.apiUrl}/menu`;
 
-  constructor(private readonly httpClient: HttpClient) { }
+  constructor(
+    private readonly httpClient: HttpClient,
+  ) { }
 
   // PUT : /menu/add
   add(
@@ -73,27 +75,33 @@ export class MenuService {
     }, this.httpOptions);
   }
 
+  // ==================== API RELATED METHODS ====================
+
   // GET : /menu/findimg/{menuid}
   findImg(ingredientId: number): Observable<Image> {
     return this.httpClient.get<Image>(`${this.urlMenu}/findimg/${ingredientId}`);
   }
 
   // GET : /menu/findallavailableforweekandday/{weeknumber}/{daynumber}
+  // Warning : Return the menus without an AvailableForWeeksAndDays as well
   findAllAvailableForWeekAndDay(weekNumber: number, dayNumber: number): Observable<Menu[]> {
     return this.httpClient.get<Menu[]>(`${this.urlMenu}/findallavailableforweekandday/${weekNumber}/${dayNumber}`);
   }
 
   // GET : /menu/findallavailableforweek/{weeknumber}
+  // Warning : Return the menus without an AvailableForWeeksAndDays as well
   findAllAvailableForWeek(weekNumber: number): Observable<Menu[]> {
     return this.httpClient.get<Menu[]>(`${this.urlMenu}/findallavailableforweek/${weekNumber}`);
   }
 
   // GET : /menu/findallavailablefortoday
+  // Warning : Return the menus without an AvailableForWeeksAndDays as well
   findAllAvailableForToday(): Observable<Menu[]> {
     return this.httpClient.get<Menu[]>(`${this.urlMenu}/findallavailablefortoday`);
   }
 
   // GET : /menu/findallavailableforthisweek
+  // Warning : Return the menus without an AvailableForWeeksAndDays as well
   findAllAvailableForThisWeek(): Observable<Menu[]> {
     return this.httpClient.get<Menu[]>(`${this.urlMenu}/findallavailableforthisweek`);
   }

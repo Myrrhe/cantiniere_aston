@@ -15,13 +15,13 @@ import { TokenService } from 'src/app/services/token.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
 
   form: Credential = {
     email: '',
-    password: ''
+    password: '',
   };
 
   constructor(

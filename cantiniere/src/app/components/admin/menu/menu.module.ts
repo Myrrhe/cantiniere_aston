@@ -11,11 +11,11 @@ import { MEditComponent } from './m-edit/m-edit.component';
   declarations: [
     MDeleteComponent,
     MAddComponent,
-    MEditComponent
+    MEditComponent,
   ],
   imports: [
     CommonModule,
-    MenuRoutingModule
+    MenuRoutingModule,
   ]
 })
 export class MenuModule { }

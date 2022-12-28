@@ -68,6 +68,6 @@ Il y a plusieurs manière de régler les conflits, celle présentée ici n'en es
 12) On vérifie le code, puis on merge
     13)  `git rebase origin develop` On met à jour la branche. S'il y a des conflits, on les règle, puis on fait `git rebase --continue`
 
-11) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
-12) On crée la pull request
-13) On vérifie le code, puis on merge
+14) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
+15) On crée la pull request
+16) On vérifie le code, puis on merge

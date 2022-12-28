@@ -5,19 +5,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 
 export class RegistrationService {
-  
-  private apiUrl = environment.apiUrl;
-  constructor(private http: HttpClient) { }
+
+  private readonly apiUrl = environment.apiUrl;
+  constructor(private readonly http: HttpClient) { }
 
   newUser(user: User): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/user/register`, user);
   }
 }
-

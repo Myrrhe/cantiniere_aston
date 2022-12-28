@@ -17,6 +17,8 @@ export class OrderService {
 
   constructor(private readonly httpClient: HttpClient) { }
 
+  // ==================== API RELATED METHODS ====================
+
   // PUT : /order/add
   add(
     userId: number,

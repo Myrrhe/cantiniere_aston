@@ -17,6 +17,8 @@ export class ConstraintService {
 
   constructor(private readonly httpClient: HttpClient) { }
 
+  // ==================== API RELATED METHODS ====================
+
   // PUT : /constraint/add
   add(orderTimeLimit: string, maximumOrderPerDay: number, rateVAT: number): Observable<Constraint> {
     return this.httpClient.put<Constraint>(`${this.urlConstraint}/add`, {

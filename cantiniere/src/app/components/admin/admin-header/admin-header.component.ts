@@ -5,7 +5,7 @@ import { TokenService } from 'src/app/services/token.service';
 @Component({
   selector: 'app-admin-header',
   templateUrl: './admin-header.component.html',
-  styleUrls: ['./admin-header.component.css']
+  styleUrls: ['./admin-header.component.css'],
 })
 export class AdminHeaderComponent implements OnInit {
   // user: User = {
@@ -13,7 +13,7 @@ export class AdminHeaderComponent implements OnInit {
   //   prenom: '',
   //   email: ''
   // }
-  constructor(private tokenService: TokenService) { }
+  constructor(private readonly tokenService: TokenService) { }
 
   ngOnInit(): void {
     // this.user = this.tokenService.getPayload()
@@ -21,6 +21,6 @@ export class AdminHeaderComponent implements OnInit {
   }
 
   logout(): void {
-    this.tokenService.clearToken()
+    this.tokenService.clearToken();
   }
 }

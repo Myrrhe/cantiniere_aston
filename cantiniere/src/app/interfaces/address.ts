@@ -1,4 +1,4 @@
-import { Geo } from "./geo";
+import { Geo } from './geo';
 
 export interface Address {
     street: string;
