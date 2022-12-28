@@ -5,7 +5,8 @@
   <div *ngIf="menuAvailableForThisWeek[day - 1].length === 0" class="pad">
     Rien (pour l'instant…)
   </div>
-  <div *ngFor="let menu of menuAvailableForThisWeek[day - 1]">
+  <div *ngFor="let menu of menuAvailableForThisWeek[day - 1]" class="pad">
+    {{menu[0].label}}
     <div *ngFor="let category of menu[1]" class="pad">
       {{category | categoryLabel}}
       <div *ngFor="let meal of menu[0].meals">
@@ -14,6 +15,7 @@
         </div>
       </div>
     </div>
+    ({{menu[0].priceDF}} €)
     <br>
   </div>
 </div>
