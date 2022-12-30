@@ -1,7 +1,5 @@
 .styled-table {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: inline-block;
     height: 42em;
     overflow-y: scroll;
     margin: 25px 0;

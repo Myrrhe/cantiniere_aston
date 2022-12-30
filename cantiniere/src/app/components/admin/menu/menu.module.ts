@@ -1,6 +1,6 @@
 /**
- * Title : Composant Users list
- * Description : 
+ * Title : Modules menu list
+ * Description : Ce fichier permet de faire les imports nécessaires pour la partie "admin-menu" et à créer un module admin-menu contenant les 4 modules "menu". 
  * Author : Thierry Maurouzel
 */
 

@@ -7,6 +7,7 @@
 // Imports
 import { Component, OnInit } from '@angular/core';
 import { Menu } from 'src/app/interfaces/menu';
+import { Image } from 'src/app/interfaces/image';
 import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
@@ -17,6 +18,8 @@ import { MenuService } from 'src/app/services/menu.service';
 export class MIndexComponent implements OnInit {
 
   menuList!: Menu[];
+  image!: Image;
+  menuImages!: Image[];
 
   constructor(private MenuService: MenuService) { }
 
