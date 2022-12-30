@@ -6,9 +6,9 @@
 
 // Imports
 import { Component, OnInit } from '@angular/core';
-//
+
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { AuthService } from 'src/app/services/auth.service';
-// Interfaces
 import { Credential } from 'src/app/interfaces/credential';
 import { TokenService } from 'src/app/services/token.service';
 

@@ -1,5 +1,12 @@
+/**
+ * Title : Composant admin header
+ * Description : 
+ * Author : Thierry Maurouzel
+*/
+
+// Imports
 import { Component, OnInit } from '@angular/core';
-//
+import { TokenUser } from 'src/app/interfaces/user';
 import { TokenService } from 'src/app/services/token.service';
 
 @Component({
@@ -8,17 +15,21 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./admin-header.component.css'],
 })
 export class AdminHeaderComponent implements OnInit {
-  // user: User = {
-  //   nom: '',
-  //   prenom: '',
-  //   email: ''
-  // }
-  constructor(private readonly tokenService: TokenService) { }
+
+  user: TokenUser = {
+    id: 0,
+    name: '',
+    firstname: '',
+    email: ''
+  }
+
+  constructor(private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    // this.user = this.tokenService.getPayload()
-    // console.log(this.user)
-  }
+    this.user = this.tokenService.getPayload()
+    console.log("this.user")
+    console.log(this.user)
+  } 
 
   logout(): void {
     this.tokenService.clearToken();

@@ -1,6 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+/**
+ * Title : Composant Users list
+ * Description : 
+ * Author : Thierry Maurouzel
+*/
+
+// Imports
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/app/environments/environment';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({

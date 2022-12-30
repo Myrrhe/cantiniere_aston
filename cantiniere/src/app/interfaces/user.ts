@@ -18,3 +18,12 @@ export interface User {
     status: number
     imageId: number
 }
+
+export interface TokenUser{
+    id: number,
+    name: string,
+    firstname: string,
+    email: string,
+    iap?: number,
+    exp?: number
+}

@@ -1,18 +1,20 @@
-<!-- <header> -->
-    <!-- <div>Bonjour {{ user.nom | titlecase }} {{ user.prenom | titlecase }} </div> -->
-    <!-- <button (click)='logout()'>Logout</button> -->
-<!-- </header> -->
+
+  
 
 <header class="header">
+ 
+
     <div class="menu-icon" onclick="openSidebar()">
-      <span class="material-icons-outlined">menu</span>
+      <span class="material-icons-outlined">Stone Education</span>
     </div>
     <div class="header-left">
-      <span class="material-icons-outlined">search</span>
+      <span class="material-icons-outlined">search {{user.name}} </span>
     </div>
     <div class="header-right">
+      <div>Bonjour {{ user.name | titlecase }} {{ user.firstname | titlecase }} </div>
       <span class="material-icons-outlined">notifications</span>
       <span class="material-icons-outlined">email</span>
       <span class="material-icons-outlined">account_circle</span>
+      <button (click)='logout()'>Logout</button>
     </div>
   </header>

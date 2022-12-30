@@ -21,20 +21,15 @@ export class UEditComponent implements OnInit {
 
     let id = this.activated.snapshot.paramMap.get('id')
 
-    console.log(id);
-
     this.UserService.getUser(id).subscribe(
       data => {
         console.log(data)
-        // this.user = data.data
+        this.user = data
       }
-    )    
-
-    // this.activated.params.subscribe(
-    //   (data) => {
-    //     console.log(data)
-    //   }
-    // )
+    )   
   }
 
+  onSubmit():void{
+    console.log(this.user.id)
+  }
 }

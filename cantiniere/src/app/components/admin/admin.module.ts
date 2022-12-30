@@ -8,7 +8,6 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 
-
 @NgModule({
   declarations: [
     LayoutComponent,
