@@ -66,8 +66,8 @@ export class OrderService {
   }
 
   // GET : /order/findall
-  findAll(): Observable<Order> {
-    return this.httpClient.get<Order>(`${this.urlOrder}/findall`);
+  findAll(): Observable<Order[]> {
+    return this.httpClient.get<Order[]>(`${this.urlOrder}/findall`);
   }
 
   // GET : /order/findall/{menuId}

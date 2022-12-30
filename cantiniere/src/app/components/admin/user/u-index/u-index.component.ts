@@ -1,6 +1,6 @@
 /**
  * Title : Composant Users list
- * Description : 
+ * Description : Fichier récupérant la liste de tous les utilisateurs
  * Author : Thierry Maurouzel
 */
 
