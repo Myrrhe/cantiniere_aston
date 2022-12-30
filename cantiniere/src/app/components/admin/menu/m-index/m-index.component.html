@@ -1,1 +1,21 @@
 <p>m-index works!</p>
+
+<table class="styled-table scrollbar" id="scrollbar1">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Prix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let menu of menuList">
+        <td>{{ menu.label }}</td>
+        <td>{{ menu.description }}</td>
+        <td>{{ menu.priceDF }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+

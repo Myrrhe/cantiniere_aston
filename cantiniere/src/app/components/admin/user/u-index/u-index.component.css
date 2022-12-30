@@ -2,10 +2,8 @@
     display: inline-block;
     height: 42em;
     overflow-y: scroll;
-
     margin: 25px 0;
     border-radius: 8px;
-
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;

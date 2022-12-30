@@ -19,7 +19,6 @@ export class UIndexComponent implements OnInit {
 
   constructor(private UserService: UserService) { }
 
-
   ngOnInit(): void {
     // this.onGetUsers();
   }

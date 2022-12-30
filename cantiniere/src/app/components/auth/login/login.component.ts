@@ -40,8 +40,17 @@ export class LoginComponent implements OnInit {
     console.log(this.form);
     this.authServer.login(this.form).subscribe(
       resp => {
+
         console.log(resp.headers.get('Authorization'));
         this.tokenService.saveToken(resp.headers.get('Authorization'));
+
+        // console.log(resp.headers.get('Authorization'))
+        let originalToken = (resp.headers.get('Authorization'))
+        if (originalToken !== null) {
+        let slicedToken = originalToken.slice(7)
+        this.tokenService.saveToken(slicedToken)   
+      }
+
       },
       err => console.log(err),
     );

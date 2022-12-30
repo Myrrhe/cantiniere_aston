@@ -37,6 +37,7 @@ export class TokenInterceptor implements HttpInterceptor {
         headers: request.headers.set('Authorization', '' +token) // And we add the header 'Authorization' with the value of our token
       });
       console.log(clone);
+
       return next.handle(clone).pipe( // When response arrives, we recover the errors
         catchError(error => {
           console.log(error);

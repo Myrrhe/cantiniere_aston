@@ -21,20 +21,25 @@ Author : Thierry Maurouzel
   display: flex;
   flex-direction: row;
   width: 100%;
-
 }
 
 .admin-side-menu {
   display: flex;
   flex-direction: column;
+  width: 15%;
+  min-width: 225px;
   height: auto;
 }
 
-.admin-container {
+.admin-container{
+  width: 100%;
+}
+
+.admin-content {
   display: flex;
   padding: 35px;
   flex-direction: column;
-  width: 85%;
+  width: 100%;
 }
 
 /* ---------- MEDIA QUERIES ---------- */
