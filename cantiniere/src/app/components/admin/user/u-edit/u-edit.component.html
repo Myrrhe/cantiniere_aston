@@ -7,14 +7,12 @@
 <div class="u-edit-container">
     <div class="u-edit-right-panel">
         <div class="right-panel-user-img">
-            <img src="assets/images/shrek.jpg" alt="">
+            <img src={{image.image64}} alt={{image.imagePath}}>
             <button>Changer avatar</button>
             <div>
-                <p> {{user.name}} </p>
+                <p> {{ user.name }} </p>
             </div>
         </div>
-
-        <p> {{user.name}} </p>
         <p> {{user.address}} </p>
         <p> {{user.postalCode}} </p>
         <p> {{user.wallet}} </p>
@@ -28,8 +26,7 @@
         <p> {{user.town}} </p>
         <p> {{user.sex}} </p>
         <p> {{user.status}} </p>
-        <p> {{user.imageId}} </p>
-
+        <p>IMG ID {{user.imageId}} </p>
         <div class="right-panel-user-infos">
             <form #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit()">
                 <div class="form-group">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
+import { Image } from 'src/app/interfaces/image';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,12 +11,14 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UEditComponent implements OnInit {
 
+  image!: Image;
   user!: User;
+  menuImages!: Image[];
 
   constructor(
     private activated: ActivatedRoute,
     private UserService: UserService,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
 
@@ -26,10 +29,16 @@ export class UEditComponent implements OnInit {
         console.log(data)
         this.user = data
       }
-    )   
+    )
+
+    this.UserService.getUserImage(id).subscribe(
+      data => {
+        this.image = data;
+      }
+    )
   }
 
-  onSubmit():void{
+  onSubmit(): void {
     console.log(this.user.id)
   }
 }
