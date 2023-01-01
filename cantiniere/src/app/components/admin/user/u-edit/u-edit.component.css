@@ -1,0 +1,64 @@
+/*   
+Title : Css user edit
+Description : Page d'édition d'un utilisateur déterminé par son ID. L'admin peux créditer
+Author : Thierry Maurouzel
+*/
+.u-edit-container {
+    display: flex;
+    flex-direction: row;
+
+    
+
+}
+
+.u-edit-right-panel{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.right-panel-user-img{
+    flex-direction: row;
+    margin-bottom: 20px;
+    border-bottom: solid 1px black;
+
+}
+
+.right-panel-user-img img{
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.right-panel-user-infos{
+
+}
+
+.u-edit-left-panel{
+    display: flex;
+    width: 40%;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.left-panel-wallet{
+
+}
+
+.left-panel-roles{
+
+}

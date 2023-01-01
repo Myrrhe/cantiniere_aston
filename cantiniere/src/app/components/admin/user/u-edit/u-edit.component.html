@@ -1,40 +1,63 @@
 <!--
     Title : Html user edit
-    Description : 
-    Author : Thierry Maurouzel
+    Description : Page d'édition d'un utilisateur déterminé par son ID. L'admin peux créditer
+    Author : Thierry Maurouzel 
 -->
+<a [routerLink]="['/admin/user']">Retour</a> <br><br>
+<div class="u-edit-container">
+    <div class="u-edit-right-panel">
+        <div class="right-panel-user-img">
+            <img src="assets/images/shrek.jpg" alt="">
+            <button>Changer avatar</button>
+            <div>
+                <p> {{user.name}} </p>
+            </div>
+        </div>
 
-<div>
-    <a [routerLink]="['/admin/user']">Retour</a>
-    <br><br>
+        <p> {{user.name}} </p>
+        <p> {{user.address}} </p>
+        <p> {{user.postalCode}} </p>
+        <p> {{user.wallet}} </p>
+        <p> {{user.registrationDate}} </p>
+        <p> {{user.email}} </p>
+        <p> {{user.isLunchLady}} </p>
+        <p> {{user.password}} </p>
+        <p> {{user.name}} </p>
+        <p> {{user.firstname}} </p>
+        <p> {{user.phone}} </p>
+        <p> {{user.town}} </p>
+        <p> {{user.sex}} </p>
+        <p> {{user.status}} </p>
+        <p> {{user.imageId}} </p>
+
+        <div class="right-panel-user-infos">
+            <form #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit()">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" [(ngModel)]="user.name" #nom="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" [(ngModel)]="user.firstname" #prenom="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="email">email</label>
+                    <input type="text" id="email" name="email" [(ngModel)]="user.email" #email="ngModel">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Modifier</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="u-edit-left-panel">
+        <div class="left-panel-wallet">
+            <button (ngSubmit)="onSubmit()">Créditer</button>
+            <br><br>
+            <button (ngSubmit)="onSubmit()">Créditer</button>
+            <br><br>
+        </div>
+        <div class="left-panel-roles">
+        </div>
+    </div>
 </div>
-
-<form #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit()">
-    <div class="form-group">
-        <label for="nom">Nom</label>
-        <input type="text" id="nom"
-            name="nom"
-            [(ngModel)]="user.name"
-            #nom="ngModel"
-        >
-    </div>
-    <div class="form-group">
-        <label for="prenom">Prénom</label>
-        <input type="text" id="prenom"
-            name="prenom"
-            [(ngModel)]="user.firstname"
-            #prenom="ngModel"
-        >
-    </div>
-    <div class="form-group">
-        <label for="email">email</label>
-        <input type="text" id="email"
-            name="email"
-            [(ngModel)]="user.email"
-            #email="ngModel"
-        >
-    </div>
-    <div class="form-group">
-        <button type="submit">Modifier</button>
-    </div>
-</form>
