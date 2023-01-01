@@ -6,26 +6,25 @@
 <a [routerLink]="['/admin/user']">Retour</a> <br><br>
 <div class="u-edit-container">
     <div class="u-edit-right-panel">
-        <div class="right-panel-user-img">
-            <img src={{image.image64}} alt={{image.imagePath}}>
-            <button>Changer avatar</button>
-            <div>
-                <p> {{ user.name }} </p>
+        <div class="right-panel-user-card">
+            <div class="right-panel-user-card-img">
+                <img class="image" src={{image.image64}} alt={{image.imagePath}}>
+                <div class="middle">TEXT</div>
             </div>
         </div>
-        <p> {{user.address}} </p>
-        <p> {{user.postalCode}} </p>
-        <p> {{user.wallet}} </p>
-        <p> {{user.registrationDate}} </p>
-        <p> {{user.email}} </p>
-        <p> {{user.isLunchLady}} </p>
-        <p> {{user.password}} </p>
-        <p> {{user.name}} </p>
-        <p> {{user.firstname}} </p>
-        <p> {{user.phone}} </p>
-        <p> {{user.town}} </p>
-        <p> {{user.sex}} </p>
-        <p> {{user.status}} </p>
+        <p>{{user.address}} </p>
+        <p>{{user.postalCode}} </p>
+        <p>{{user.wallet}} </p>
+        <p>{{user.registrationDate}} </p>
+        <p>{{user.email}} </p>
+        <p>{{user.isLunchLady}} </p>
+        <p>{{user.password}} </p>
+        <p>{{user.name}} </p>
+        <p>{{user.firstname}} </p>
+        <p>{{user.phone}} </p>
+        <p>{{user.town}} </p>
+        <p>{{user.sex}} </p>
+        <p>{{user.status}} </p>
         <p>IMG ID {{user.imageId}} </p>
         <div class="right-panel-user-infos">
             <form #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit()">

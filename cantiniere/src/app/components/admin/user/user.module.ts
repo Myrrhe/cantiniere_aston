@@ -14,6 +14,7 @@ import { UIndexComponent } from './u-index/u-index.component';
 import { UEditComponent } from './u-edit/u-edit.component';
 import { UAddComponent } from './u-add/u-add.component';
 import { UDeleteComponent } from './u-delete/u-delete.component';
+import { UserListSearchPipe } from './u-index/user-list-search.pipe';
 
 
 @NgModule({
@@ -22,6 +23,8 @@ import { UDeleteComponent } from './u-delete/u-delete.component';
     UEditComponent,
     UAddComponent,
     UDeleteComponent,
+
+    UserListSearchPipe
   ],
   imports: [
     CommonModule,
