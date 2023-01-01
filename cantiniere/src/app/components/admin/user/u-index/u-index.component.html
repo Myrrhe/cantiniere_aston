@@ -5,22 +5,21 @@
  -->
 
 <div>
-  Hello world
-  <button> 
+  <button>
     <a [routerLink]="['edit']">
       Ajouter un utilisateur
     </a>
   </button>
 </div>
-
 <div>
+  <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Entrez le nom que vous cherchez..." id="">
   <table class="styled-table scrollbar" id="scrollbar1">
     <thead>
       <tr>
         <th>Action</th>
         <th>Id</th>
-        <th>Nom</th>
         <th>Prénom</th>
+        <th>Nom</th>
         <th>Email</th>
         <th>Sexe</th>
         <th>Adresse</th>
@@ -30,7 +29,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of userList">
+      <tr *ngFor="let user of userList | userListSearch: searchText">
         <td><a [routerLink]="['edit', user.id]">Editer</a></td>
         <td>{{ user.id }}</td>
         <td>{{ user.firstname }}</td>

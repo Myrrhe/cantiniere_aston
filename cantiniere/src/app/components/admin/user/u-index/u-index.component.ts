@@ -3,9 +3,9 @@
  * Description : Fichier récupérant la liste de tous les utilisateurs
  * Author : Thierry Maurouzel
 */
-
 // Imports
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,7 +15,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UIndexComponent implements OnInit {
 
-  userList: any[] = [];
+  userList: User[] = [];
+  name: any;
+  // searchText: "";
 
   constructor(private UserService: UserService) { }
 
