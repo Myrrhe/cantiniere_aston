@@ -56,7 +56,7 @@
 
             <form #userCreditForm="ngForm" (ngSubmit)="creditUser(userCreditForm.value)">
                 <label for="credit"></label>
-                <input type="text" ngModel name="credit" placeholder="Créditer...">
+                <input type="number" ngModel name="credit" placeholder="Créditer...">
                 <button>Créditer</button>
             </form>
 
@@ -64,7 +64,7 @@
 
             <form #userDebitForm="ngForm" (ngSubmit)="debitUser(userDebitForm.value)">
                 <label for="debit"></label>
-                <input type="text" ngModel name="debit" placeholder="Débiter...">
+                <input type="number" ngModel name="debit" placeholder="Débiter...">
                 <button>Débiter</button>
             </form>
         </div>

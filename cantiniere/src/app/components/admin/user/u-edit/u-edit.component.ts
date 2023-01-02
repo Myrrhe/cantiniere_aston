@@ -55,22 +55,34 @@ export class UEditComponent implements OnInit {
       }
     )
   }
-  creditUser(data) {
+  // POST : Add money to user's wallet with serice on userServices
+  creditUser(data: any) {
     this.UserService.creditUser(
       this.user.id,
       data.credit).subscribe(
-      // res => {
-      //   console.log("Amount : " + data.credit)
-      // }
-    )
+        res => {
+          this.UserService.getUser(this.user.id).subscribe(
+            data => {
+              // console.log(data)
+              this.user = data
+            }
+          )
+        }
+      )
   }
-  debitUser(data) {
+  // POST : Remove money to user's wallet with service on userServices
+  debitUser(data: any) {
     this.UserService.debitUser(
       this.user.id,
       data.debit).subscribe(
-      // res => {
-      //   console.log("Amount : " + data.debit)
-      // }
-    )
+        res => {
+          this.UserService.getUser(this.user.id).subscribe(
+            data => {
+              // console.log(data)
+              this.user = data
+            }
+          )
+        }
+      )
   }
 }
