@@ -5,7 +5,7 @@
  */
 // Imports
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/app/environments/environment';
 import { User } from 'src/app/interfaces/user';
@@ -16,24 +16,51 @@ import { Image } from 'src/app/interfaces/image';
 })
 export class UserService {
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'content-type': 'application/json',
+    }),
+  };
+
   private apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) 
-  {}
+  constructor(
+    private httpClient: HttpClient,
+  ) { }
 
-  // GET : Get all users
+  // GET : Finds all users
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiUrl}/user/findall`);
+    return this.httpClient.get<User[]>(`${this.apiUrl}/user/findall`);
   }
 
-  // GET : Get one user by ID
-  getUser(id: string | null): Observable<User>{
-    return this.http.get<User>(`${this.apiUrl}/user/find/${id}`)
+  // GET : Finds one user
+  getUser(id: string | null): Observable<User> {
+    return this.httpClient.get<User>(`${this.apiUrl}/user/find/${id}`)
   }
 
-  // GET : Get user image by ID
-  getUserImage(id: number | string ): Observable<Image>{
-    return this.http.get<Image>(`${this.apiUrl}/user/findimg/${id}`)
+  // GET : Finds the user's image
+  getUserImage(id: number | string): Observable<Image> {
+    return this.httpClient.get<Image>(`${this.apiUrl}/user/findimg/${id}`)
+  }
+
+  // POST : Add money to user's wallet
+  creditUser(
+    id: string, 
+    amount: number): Observable<User> {
+    return this.httpClient.post<User>(`${this.apiUrl}/user/credit/${id}?amount=${amount}`, {
+      id: id,
+      amount: amount,
+    }, this.httpOptions);
+  }
+
+  // POST : Removes money to user's wallet
+  debitUser(
+    id: string, 
+    amount: number): Observable<User> {
+    return this.httpClient.post<User>(`${this.apiUrl}/user/debit/${id}?amount=${amount}`, {
+      id: id,
+      amount: amount,
+    }, this.httpOptions);
   }
 
   // DELETE : Delete one user by his ID
@@ -43,15 +70,23 @@ export class UserService {
 
   // PATCH : Modify one user by his ID
 
-  // PATCH : Activate one user by his ID
-  // activateUser(id: string | null): Observable<User>{
-  //   return this.http.patch<User>(`${this.apiUrl}/user/activate/${id}`)
-  // }
+  // PATCH : Activates a user
+  activateUser(
+    id: string | null,
+  ): Observable<User> {
+    return this.httpClient.patch<User>(`${this.apiUrl}/user/activate/${id}`, {
+      id: id,
+    }, this.httpOptions)
+  }
 
-  // PATCH : Desactivate one user by his ID
-  // deactivateUser(id: string | null): Observable<User>{
-  //   return this.http.patch<User>(`${this.apiUrl}/user/deactivate/${id}`)
-  // }
+  // PATCH : Desactivates a user
+  deactivateUser(
+    id: string | null,
+  ): Observable<User> {
+    return this.httpClient.patch<User>(`${this.apiUrl}/user/deactivate/${id}`, {
+      id: id,
+    }, this.httpOptions)
+  }
 
   // POST : Create one user with a form
 }

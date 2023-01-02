@@ -21,12 +21,13 @@ export class UEditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    // Get current user id from url
     let id = this.activated.snapshot.paramMap.get('id')
 
+    // GET : Finds one user with service on userServices
     this.UserService.getUser(id).subscribe(
       data => {
-        console.log(data)
+        // console.log(data)
         this.user = data
       }
     )
@@ -35,10 +36,9 @@ export class UEditComponent implements OnInit {
         this.image = data;
       }
     )
-
   }
   // PATCH : Activate a user with service on userServices
-  activateUser(id: string | null) {
+  activateUser(id: string) {
     this.UserService.activateUser(id).subscribe(
       data => {
         alert("Utilisateur activé avec succès")
@@ -47,24 +47,30 @@ export class UEditComponent implements OnInit {
     )
   }
   // PATCH : Deactivates a user with service on userServices
-  deactivateUser(id: string | null) {
+  deactivateUser(id: string) {
     this.UserService.deactivateUser(id).subscribe(
-      data => {
+      res => {
         alert("Utilisateur désactivé avec succès")
         // console.log("User "+this.user.id +" deactivated with sucess")
       }
     )
   }
-
-
-  // getAmount() {
-  //   this.UserService.addMoneyToUser(this.userWallet).subscribe({
-  //     next: (res) => {
-  //       console.log(res);
-  //     }
-  //   })
-
-  // }
-
-
+  creditUser(data) {
+    this.UserService.creditUser(
+      this.user.id,
+      data.credit).subscribe(
+      // res => {
+      //   console.log("Amount : " + data.credit)
+      // }
+    )
+  }
+  debitUser(data) {
+    this.UserService.debitUser(
+      this.user.id,
+      data.debit).subscribe(
+      // res => {
+      //   console.log("Amount : " + data.debit)
+      // }
+    )
+  }
 }
