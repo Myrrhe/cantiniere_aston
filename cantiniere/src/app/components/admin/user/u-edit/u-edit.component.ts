@@ -30,15 +30,41 @@ export class UEditComponent implements OnInit {
         this.user = data
       }
     )
-
     this.UserService.getUserImage(id).subscribe(
       data => {
         this.image = data;
       }
     )
+
+  }
+  // PATCH : Activate a user with service on userServices
+  activateUser(id: string | null) {
+    this.UserService.activateUser(id).subscribe(
+      data => {
+        alert("Utilisateur activé avec succès")
+        // console.log("User "+this.user.id +" activated with sucess")
+      }
+    )
+  }
+  // PATCH : Deactivates a user with service on userServices
+  deactivateUser(id: string | null) {
+    this.UserService.deactivateUser(id).subscribe(
+      data => {
+        alert("Utilisateur désactivé avec succès")
+        // console.log("User "+this.user.id +" deactivated with sucess")
+      }
+    )
   }
 
-  onSubmit(): void {
-    console.log(this.user.id)
-  }
+
+  // getAmount() {
+  //   this.UserService.addMoneyToUser(this.userWallet).subscribe({
+  //     next: (res) => {
+  //       console.log(res);
+  //     }
+  //   })
+
+  // }
+
+
 }
