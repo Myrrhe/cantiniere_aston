@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Image } from 'src/app/interfaces/image';
 import { Meal } from 'src/app/interfaces/meal';
 import { Menu } from 'src/app/interfaces/menu';
 import { DateService } from 'src/app/services/date.service';
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   mealAvailableForThisWeek: Meal[] = [];
   menuAvailableForThisWeek: [Menu, number[]][][] = [[], [], [], [], [], [], []];
+  imageMealOfMenus: Image[][][] = [[], [], [], [], [], [], []];
 
   constructor(
     private readonly dateService: DateService,
@@ -40,9 +42,20 @@ export class HomeComponent implements OnInit {
         // We sort the categories
         categories.sort((category1: number, category2: number): number => category1 - category2);
         // We put each menus (and it's categories), in the right day
-        for (let i = 1; i <= 7; i++) {
-          if (this.dateService.isAvailableForDayOfThisWeek(menu, i)) {
+        for (let i = 0; i <= 6; i++) {
+          if (this.dateService.isAvailableForDayOfThisWeek(menu, i + 1)) {
             this.menuAvailableForThisWeek[i].push([menu, categories]);
+            this.imageMealOfMenus[i].push([])
+            for (let meal of menu.meals) {
+              // For each meals, we look for it's image
+              let currentId = 0
+              if (meal.id !== undefined) {
+                currentId = meal.id;
+              }
+              this.mealService.findImg(currentId).subscribe((data: any) => {
+                this.imageMealOfMenus[i][this.imageMealOfMenus[i].length - 1].push(data)
+              })
+            }
           }
         }
       }
@@ -54,6 +67,6 @@ export class HomeComponent implements OnInit {
   }
 
   createRange(len: number){
-    return Array.from({length: len}).fill(0).map((_, index) => index + 1);
+    return Array.from({length: len}).fill(0).map((_, index) => index);
   }
 }

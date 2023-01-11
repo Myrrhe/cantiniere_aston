@@ -1,21 +1,22 @@
 <div>Menus pour la semaine</div>
 <br>
 <div *ngFor="let day of createRange(7)">
-  {{day | day}}
-  <div *ngIf="menuAvailableForThisWeek[day - 1].length === 0" class="pad">
+  {{(day + 1) | day}}
+  <div *ngIf="menuAvailableForThisWeek[day].length === 0" class="pad">
     Rien (pour l'instant…)
   </div>
-  <div *ngFor="let menu of menuAvailableForThisWeek[day - 1]" class="pad">
-    {{menu[0].label}}
-    <div *ngFor="let category of menu[1]" class="pad">
-      {{category | categoryLabel}}
-      <div *ngFor="let meal of menu[0].meals">
-        <div *ngIf="meal.category === category" class="pad">
-          {{meal.label}}
+  <div *ngFor="let menu of createRange(menuAvailableForThisWeek[day].length)" class="pad">
+    {{menuAvailableForThisWeek[day][menu][0].label}}
+    <div *ngFor="let category of createRange(menuAvailableForThisWeek[day][menu][1].length)" class="pad">
+      {{menuAvailableForThisWeek[day][menu][1][category] | categoryLabel}}
+      <div *ngFor="let meal of createRange(menuAvailableForThisWeek[day][menu][0].meals.length)">
+        <div *ngIf="menuAvailableForThisWeek[day][menu][0].meals[meal].category === menuAvailableForThisWeek[day][menu][1][category]" class="pad">
+          {{menuAvailableForThisWeek[day][menu][0].meals[meal].label}}
+          <img src={{imageMealOfMenus[day][menu][meal].image64}} alt={{menuAvailableForThisWeek[day][menu][0].meals[meal].label}}>
         </div>
       </div>
     </div>
-    ({{menu[0].priceDF}} €)
+    ({{menuAvailableForThisWeek[day][menu][0].priceDF}} €)
     <br>
   </div>
 </div>
