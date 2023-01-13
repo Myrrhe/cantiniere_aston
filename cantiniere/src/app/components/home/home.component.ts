@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // Set this variable to true if you want to use the database
     const usingDatabase = false;
 
     // Data fetching
@@ -75,6 +76,7 @@ export class HomeComponent implements OnInit {
     }
 
     // Fake data
+    // Create 5 ingredients, 7 meals and 7 menus
     this.createFakeData(5, 7, 7);
   }
 
@@ -156,6 +158,7 @@ export class HomeComponent implements OnInit {
 
     // Images creation
     for (let i = 0; i < currentImageId; i++) {
+      // The images don't work with the one created for this purpose for some reason
       this.fakeImages.push({
         id: i + 1,
         image64: `../../assets/images/fake/${i + 1}.png`,
