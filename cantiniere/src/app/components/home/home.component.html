@@ -1,4 +1,4 @@
-<div>Menus pour la semaine</div>
+<!-- <div>Menus pour la semaine</div>
 <br>
 <div *ngFor="let day of createRange(7)">
   {{(day + 1) | day}}
@@ -26,4 +26,12 @@
 <br>
 <div *ngFor="let meal of mealAvailableForThisWeek">
   <div>{{meal.label}} ({{meal.category | categoryLabel}})</div>
+</div> -->
+
+
+<div *ngFor="let meal of fakeMeals">
+  {{meal.label}}
+</div>
+<div *ngFor="let image of fakeImages">
+  <img src={{image.image64}} alt={{image.imagePath}}>
 </div>
