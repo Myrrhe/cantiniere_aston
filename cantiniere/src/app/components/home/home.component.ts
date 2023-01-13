@@ -150,8 +150,8 @@ export class HomeComponent implements OnInit {
     for (let i = 0; i < currentImageId; i++) {
       this.fakeImages.push({
         id: i + 1,
-        image64: ``,
-        imagePath: ``,
+        image64: `../../assets/images/fake/${i + 1}.png`,
+        imagePath: `../../assets/images/fake/${i + 1}.png`,
         isDefault: 0,
       });
     }
