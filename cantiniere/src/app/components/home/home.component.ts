@@ -32,42 +32,50 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.mealService.findAll().subscribe((dataMeal: any) => {
-      this.mealAvailableForThisWeek = this.dateService.filterAvailableForThisWeek(dataMeal);
-    });
+    const usingDatabase = false;
 
-    this.menuService.findAll().subscribe((dataMenu: any) => {
-      // We get the manus available for this week
-      const dataFiltered: Menu[] = this.dateService.filterAvailableForThisWeek(dataMenu);
-      for (const menu of dataFiltered) {
-        const categories: number[] = [];
-        // We get the differents categories presents in each menus
-        for (const meal of menu.meals) {
-          if (!categories.some((category: number): boolean => meal.category === category)) {
-            categories.push(meal.category);
+    // Data fetching
+    if (usingDatabase) {
+      this.mealService.findAll().subscribe((dataMeal: any) => {
+        this.mealAvailableForThisWeek = this.dateService.filterAvailableForThisWeek(dataMeal);
+      });
+
+      this.menuService.findAll().subscribe((dataMenu: any) => {
+        // We get the manus available for this week
+        const dataFiltered: Menu[] = this.dateService.filterAvailableForThisWeek(dataMenu);
+        for (const menu of dataFiltered) {
+          const categories: number[] = [];
+          // We get the differents categories presents in each menus
+          for (const meal of menu.meals) {
+            if (!categories.some((category: number): boolean => meal.category === category)) {
+              categories.push(meal.category);
+            }
           }
-        }
-        // We sort the categories
-        categories.sort((category1: number, category2: number): number => category1 - category2);
-        // We put each menus (and it's categories), in the right day
-        for (let i = 0; i <= 6; i++) {
-          if (this.dateService.isAvailableForDayOfThisWeek(menu, i + 1)) {
-            this.menuAvailableForThisWeek[i].push([menu, categories]);
-            this.imageMealOfMenus[i].push([]);
-            for (const meal of menu.meals) {
-              // For each meals, we look for it's image
-              let currentId = 0;
-              if (meal.id !== undefined) {
-                currentId = meal.id;
+          // We sort the categories
+          categories.sort((category1: number, category2: number): number => category1 - category2);
+          // We put each menus (and it's categories), in the right day
+          for (let i = 0; i <= 6; i++) {
+            if (this.dateService.isAvailableForDayOfThisWeek(menu, i + 1)) {
+              this.menuAvailableForThisWeek[i].push([menu, categories]);
+              this.imageMealOfMenus[i].push([]);
+              for (const meal of menu.meals) {
+                // For each meals, we look for it's image
+                let currentId = 0;
+                if (meal.id !== undefined) {
+                  currentId = meal.id;
+                }
+                this.mealService.findImg(currentId).subscribe((dataImg: any) => {
+                  this.imageMealOfMenus[i][this.imageMealOfMenus[i].length - 1].push(dataImg);
+                });
               }
-              this.mealService.findImg(currentId).subscribe((dataImg: any) => {
-                this.imageMealOfMenus[i][this.imageMealOfMenus[i].length - 1].push(dataImg);
-              });
             }
           }
         }
-      }
-    });
+      });
+    }
+
+    // Fake data
+    this.createFakeData(5, 7, 7);
   }
 
   sortMealsByCategory(meals: Meal[]): Meal[] {
@@ -78,7 +86,7 @@ export class HomeComponent implements OnInit {
     return Array.from({length: len}).fill(0).map((_, index) => index);
   }
 
-  createFakeMealsAndMenus(lenIngredients: number, lenMeals: number, lenMenus: number) {
+  createFakeData(lenIngredients: number, lenMeals: number, lenMenus: number) {
     let currentImageId = 1;
 
     // Ingredients creation
