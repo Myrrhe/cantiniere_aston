@@ -17,10 +17,10 @@ export class AppComponent {
     private readonly router: Router,
     ){}
 
-    openDialog(){
-      this.dialogRef.open(PopUpComponent,{height:'80px',width:'100px',data:"right click"
-    })
-    }
+    // openDialog(){
+    //   this.dialogRef.open(PopUpComponent,{height:'80px',width:'100px',data:"right click"
+    // })
+    // }
 
   title = 'cantiniere';
 

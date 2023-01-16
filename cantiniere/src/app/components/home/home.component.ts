@@ -7,6 +7,8 @@ import { DateService } from 'src/app/services/date.service';
 import { MathService } from 'src/app/services/math.service';
 import { MealService } from 'src/app/services/meal.service';
 import { MenuService } from 'src/app/services/menu.service';
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import { PopUpComponent } from '../../pop-up/pop-up.component';
 
 @Component({
   selector: 'app-home',
@@ -25,15 +27,21 @@ export class HomeComponent implements OnInit {
   fakeImages: Image[] = [];
 
   constructor(
+    public dialogRef :MatDialog,
     private readonly dateService: DateService,
     private readonly mathService: MathService,
     private readonly mealService: MealService,
     private readonly menuService: MenuService,
   ) { }
 
+  openDialog(){
+    this.dialogRef.open(PopUpComponent,{height:'80px',width:'100px',data:"right click"
+  })
+  }
+
   ngOnInit(): void {
     // Set this variable to true if you want to use the database
-    const usingDatabase = false;
+    const usingDatabase = true;
 
     // Data fetching
     if (usingDatabase) {
