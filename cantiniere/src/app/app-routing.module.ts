@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {PagePanierComponent} from './page-panier/page-panier.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 
 // import { LoginComponent } from './components/auth/login/login.component';
@@ -22,13 +23,13 @@ const routes: Routes = [
     path: 'admin', loadChildren: () => import('./components/admin/admin.module')
       .then(m => m.AdminModule), canActivate:[AuthGuard],
   },
+  { path: 'panier', component: PagePanierComponent },
 
   // { path: 'login', component: LoginComponent },
   // { path: 'signin', component: SigninComponent },
   { path: '404', component: PageNotFoundComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: '**', pathMatch: 'full', redirectTo: '/404'},
-
 ];
 
 @NgModule({

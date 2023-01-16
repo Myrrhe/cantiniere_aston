@@ -1,0 +1,58 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@1,700&display=swap');
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@100;200&family=Roboto:ital,wght@1,700&display=swap');
+</style>
+
+<!--le div pody de le composant de panier page-->
+<div id="PagePanierContainer">
+    <!--le div pour le page title-->
+    <div class="container text-center menu">
+        <div class="cc">
+            <div class="ligne1"></div>
+            <h1>Panier</h1>
+            <div class="ligne2"></div>
+        </div>
+        <!--end de page title-->
+    </div>
+    <!--le div pour le contenu de la panier carts et totale section -->
+    <div id="PanierCotnent">
+        <!--message affiche si le page panier est vide-->
+        <p id="msgPanVid" *ngIf="panierCartsTotale.innerHTML === ''">Votre panier est vide</p>
+        <!--le div pour les carts et le span total -->
+        <div id="panierCartsTotale" #panierCartsTotale>
+            <!--div contien touts les carts de panier -->
+            <div id="PanierCarts">
+                <!--div contien touts les carts de jour-->
+                <div class="Cart" *ngFor="let command of commands">
+                    <div class="CartPanjour">
+                        <p>{{command.jour}}</p>
+                    </div>
+                    <!---------le contenu de cart pour ce jour---------------------->
+                    <div class="cartText">
+                        <p>{{command.plat}}</p>
+                        <p class="text">Qty:{{command.qty}}</p>
+                        <p class="text">{{command.prix}}€</p>
+                        <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
+                    </div>
+                </div>
+                <!---------end de cart---------------------->  
+            </div>
+            <span id="totaleSpan">
+                <p>TOTAL</p>
+                <p>{{total}}<span>€</span></p>
+            </span>
+        </div>
+        <!--le block totale change de contunu dynamique-->
+        <section id="Totale" *ngIf="panierCartsTotale.innerHTML !== ''">
+            <h2>TOTAL</h2>
+            <!--affiche de total de prix de les plats de panier-->
+            <p>{{total}}<span>€</span></p>
+            <!--le button change de contunu dynamique-->
+            <button *ngIf="!isAuth">CONNECTEZ-VOUS</button>
+            <button *ngIf="isAuth">VALIDER LA COMMANDE</button>
+            
+        </section>
+    </div>
+</div>
