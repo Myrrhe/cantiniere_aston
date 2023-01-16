@@ -1,1 +1,61 @@
-<p>side-menu works!</p>
+<!--
+Title : Html side menu admin part
+Description : 
+Author : Thierry Maurouzel
+-->
+
+<!-- A faire :
+- Faire que le menu selectionné soit visible
+- Travailler le CSS
+- Ajouter des icones
+-->
+
+<aside id="sidebar">
+  <div class="sidebar-title">
+    <div class="sidebar-brand">
+      <a [routerLink]="['/']">
+        <span class="material-icons-outlined"></span> Page d'accueil
+      </a>
+    </div>
+  </div>
+  <span>
+    <hr />
+  </span>
+  <ul class="sidebar-list">
+    <li class="sidebar-list-item">
+      <a [routerLink]="['dashboard']">
+        <span class="material-icons-outlined">Tableau de bord</span>
+      </a>
+    </li>
+    <li class="sidebar-list-item">
+      <a [routerLink]="['user']">
+        <span class="material-icons-outlined">Utilisateurs</span>
+      </a>
+    </li>
+    <li class="sidebar-list-item">
+      <a [routerLink]="['menu']">
+        <span class="material-icons-outlined">Menu</span>
+      </a>
+    </li>
+    <li class="sidebar-list-item">
+      <a [routerLink]="['order']">
+        <span class="material-icons-outlined">Commandes</span> 
+      </a>
+    </li>
+    <li class="sidebar-list-item">
+      <a href="#">
+        <span class="material-icons-outlined">Configuration</span> 
+      </a>
+    </li>
+    <li class="sidebar-list-item">
+      <a href="#">
+        <span class="material-icons-outlined">Configuration</span> 
+      </a>
+    </li>
+    <li class="sidebar-list-item">
+      <a href="#">
+        <span class="material-icons-outlined">Configuration</span> 
+      </a>
+    </li>
+  </ul>
+</aside>

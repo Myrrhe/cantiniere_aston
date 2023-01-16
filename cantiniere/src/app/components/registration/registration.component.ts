@@ -17,7 +17,7 @@ export class RegistrationComponent implements OnInit {
     wallet: 0 ,
     registrationDate: '',
     email: '',
-    isLunchLady:false ,
+    isLunchLady: false,
     password: '',
     name: '',
     firstname: '',

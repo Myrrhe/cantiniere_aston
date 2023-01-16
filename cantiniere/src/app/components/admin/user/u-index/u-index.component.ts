@@ -1,7 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+/**
+ * Title : Composant Users list
+ * Description : Fichier récupérant la liste de tous les utilisateurs
+ * Author : Thierry Maurouzel
+*/
+// Imports
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/app/environments/environment';
-// import { UserListService } from 'src/app/services/';
+import { User } from 'src/app/interfaces/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-u-index',
@@ -10,25 +15,26 @@ import { environment } from 'src/app/environments/environment';
 })
 export class UIndexComponent implements OnInit {
 
-  private apiUrl = environment.apiUrl;
+  userList: User[] = [];
+  name: any;
+  searchText: "";
 
-  // constructor(private UserListService: UserListService) { }
-
+  constructor(private UserService: UserService) { }
 
   ngOnInit(): void {
-    // this.onGetUsers();
+    this.onGetUsers();
   }
 
-//   onGetUsers(): void {
-//     this.UserListService.getUsers().subscribe(
-//       (response) => {
-//         this.users = (response),
-//         console.table(this.users),
-//         (error:any) => console.log(error)
-//       },
-//     )
-//   }
-
-// }
+  onGetUsers(): void {
+    this.UserService.getUsers().subscribe(
+      (response) => {
+        this.userList = (response),
+        console.table(this.userList),
+        (error:any) => console.log(error)
+      },
+    )
+  }
 
 }
+
+

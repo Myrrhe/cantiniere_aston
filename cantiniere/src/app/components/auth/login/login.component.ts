@@ -6,9 +6,9 @@
 
 // Imports
 import { Component, OnInit } from '@angular/core';
-//
+
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { AuthService } from 'src/app/services/auth.service';
-// Interfaces
 import { Credential } from 'src/app/interfaces/credential';
 import { TokenService } from 'src/app/services/token.service';
 
@@ -40,8 +40,17 @@ export class LoginComponent implements OnInit {
     console.log(this.form);
     this.authServer.login(this.form).subscribe(
       resp => {
+
         console.log(resp.headers.get('Authorization'));
         this.tokenService.saveToken(resp.headers.get('Authorization'));
+
+        // console.log(resp.headers.get('Authorization'))
+        let originalToken = (resp.headers.get('Authorization'))
+        // if (originalToken !== null) {
+        let slicedToken = originalToken!.slice(7)
+        this.tokenService.saveToken(slicedToken)   
+      // }
+
       },
       err => console.log(err),
     );

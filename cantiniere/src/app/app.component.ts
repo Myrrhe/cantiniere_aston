@@ -24,9 +24,6 @@ export class AppComponent {
   }
 
   hasRouteBeginBy(route: string) {
-    console.log(this.router.url);
-    console.log(route);
-    console.log(this.router.url.startsWith(route));
     return this.router.url.startsWith(route);
   }
 }

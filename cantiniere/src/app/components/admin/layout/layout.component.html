@@ -1,9 +1,19 @@
-<app-admin-header></app-admin-header>
-<div class="admin-body">
-    <div class="menu">
-        <app-side-menu></app-side-menu>
-    </div>
-    <div class="admin-container">
-        <router-outlet></router-outlet>
+<!--
+Title : Html layout admin admin part
+Description : Fichier construisant la structure de la partie admin du site en trois parties. Un header, un side menu et une partie container affichant les différents composants admins comme les listes des utilisateurs ou l'édition d'un menu.
+Author : Thierry Maurouzel
+-->
+
+<div class="admin-layout">
+    <div class="admin-body">
+        <div class="admin-side-menu">
+            <app-side-menu></app-side-menu>
+        </div>
+        <div class="admin-container">
+            <app-admin-header></app-admin-header>
+            <div class="admin-content">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
     </div>
 </div>

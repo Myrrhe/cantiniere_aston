@@ -34,9 +34,10 @@ export class TokenInterceptor implements HttpInterceptor {
     // If Token exist
     if(token !== null){
       const clone = request.clone({ // We clone outgoing requests
-        headers: request.headers.set('Authorization', '' +token) // And we add the header 'Authorization' with the value of our token
+        headers: request.headers.set('Authorization', 'Bearer ' +token) // And we add the header 'Authorization' with the value of our token
       });
       console.log(clone);
+
       return next.handle(clone).pipe( // When response arrives, we recover the errors
         catchError(error => {
           console.log(error);

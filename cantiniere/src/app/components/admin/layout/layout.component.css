@@ -1,0 +1,89 @@
+/* 
+Title : Css Layout admin part
+Description : Css du layout de la partie admin du site
+Author : Thierry Maurouzel 
+*/
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  height: 100%;
+  width: 100%;
+}
+
+.admin-body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.admin-side-menu {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  min-width: 225px;
+  height: auto;
+}
+
+.admin-container{
+  width: 100%;
+}
+
+.admin-content {
+  display: flex;
+  padding: 35px;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Medium <= 992px */
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      "header"
+      "main";
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title>span {
+    display: inline;
+  }
+}
+
+/* Small <= 768px */
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+@media screen and (max-width: 576px) {
+  .header-left {
+    display: none;
+  }
+}

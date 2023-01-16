@@ -15,10 +15,14 @@ const routes: Routes = [
       },
       {
         path: 'menu', loadChildren: () => import('./menu/menu.module')
-        .then(m => m.MenuModule),
+        .then(m => m.MenuModule)
       },
-    ],
-  },
+      {
+        path: 'order', loadChildren: () => import('./order/order.module')
+        .then(m => m.OrderModule)
+      },
+    ]
+  }
 ];
 
 @NgModule({

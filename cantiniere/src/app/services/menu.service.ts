@@ -112,8 +112,8 @@ export class MenuService {
   }
 
   // GET : /menu/find/{menuid}
-  find(menuId: number): Observable<Menu[]> {
-    return this.httpClient.get<Menu[]>(`${this.urlMenu}/find/${menuId}`);
+  find(menuId: number | string): Observable<Menu> {
+    return this.httpClient.get<Menu>(`${this.urlMenu}/find/${menuId}`);
   }
 
   // DELETE : /menu/delete/{menuid}

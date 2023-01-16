@@ -1,0 +1,69 @@
+.styled-table {
+    display: inline-block;
+    height: 42em;
+    overflow-y: scroll;
+    margin: 25px 0;
+    border-radius: 8px;
+
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    background-color: white;
+
+}
+
+.styled-table thead tr {
+    color: black;
+    text-align: left;
+    border-bottom: solid 1px #dddddd;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    width: 100%;
+
+}
+    
+.styled-table th {
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(odd) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #5BBBBF;
+}
+
+ .scrollbar {
+    overflow: auto;
+    padding: 0 10px;
+}
+
+#scrollbar1::-webkit-scrollbar {
+    width: 10px;
+}
+
+#scrollbar1::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #f7f7f7;
+
+}
+
+#scrollbar1::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #718096;
+} 

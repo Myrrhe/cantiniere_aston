@@ -1,1 +1,89 @@
-<p>u-edit works!</p>
+<!--
+    Title : Html user edit
+    Description : Page d'édition d'un utilisateur déterminé par son ID. L'admin peux créditer
+    Author : Thierry Maurouzel 
+-->
+<a [routerLink]="['/admin/user']">Retour</a> <br><br>
+<div class="u-edit-container">
+    <div class="u-edit-right-panel">
+        <h2>Profil</h2>
+        <hr>
+        <div class="right-panel-user-card">
+            <div class="right-panel-user-card-img">
+                <img class="image" src={{image.image64}} alt={{image.imagePath}}>
+                <div class="middle">TEXT</div>
+            </div>
+        </div>
+        <p>{{user.address}} </p>
+        <p>{{user.postalCode}} </p>
+        <p>{{user.wallet}} </p>
+        <p>{{user.registrationDate}} </p>
+        <p>{{user.email}} </p>
+        <p>{{user.isLunchLady}} </p>
+        <p>{{user.password}} </p>
+        <p>{{user.name}} </p>
+        <p>{{user.firstname}} </p>
+        <p>{{user.phone}} </p>
+        <p>{{user.town}} </p>
+        <p>{{user.sex}} </p>
+        <p>{{user.status}} </p>
+        <p>IMG ID {{user.imageId}} </p>
+        <div class="right-panel-user-infos">
+            <form #f="ngForm" name="form" (ngSubmit)="f.form.valid">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" [(ngModel)]="user.name" #nom="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" [(ngModel)]="user.firstname" #prenom="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="email">email</label>
+                    <input type="text" id="email" name="email" [(ngModel)]="user.email" #email="ngModel">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Modifier</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="u-edit-left-panel">
+        <div class="left-panel-wallet">
+            <h2>Portefeuil</h2>
+            <hr>
+            <p>Compte : {{user.wallet}}</p><br><br><br>
+
+            <form #userCreditForm="ngForm" (ngSubmit)="creditUser(userCreditForm.value)">
+                <label for="credit"></label>
+                <input type="number" ngModel name="credit" placeholder="Créditer...">
+                <button>Créditer</button>
+            </form>
+
+            <br><br><br>
+
+            <form #userDebitForm="ngForm" (ngSubmit)="debitUser(userDebitForm.value)">
+                <label for="debit"></label>
+                <input type="number" ngModel name="debit" placeholder="Débiter...">
+                <button>Débiter</button>
+            </form>
+        </div>
+        <div class="left-panel-roles">
+            <!-- Ce panneau permet de gérer le statut de l'utilisateur ainsi que sont rôle -->
+            <h2>Gestion du compte</h2>
+            <div class="left-panel-roles-status">
+                <button (click)="activateUser(user.id!)">Activer l'utilisateur</button>
+                <button (click)="deactivateUser(user.id!)">Désactiver l'utilisateur</button>
+            </div>
+            <div class="left-panel-roles-isLunchLady">
+                <!-- <button (click)="">Rendre administrateur</button> -->
+            </div>
+            <div class="left-panel-roles-infos">
+                <p>Rôle : {{ user.isLunchLady }}</p>
+                <p>Statut : {{ user.status }} </p>
+            </div>
+
+            <!-- Ajouter un bouton pour changer le rôle d'un utilisateur. -->
+        </div>
+    </div>
+</div>

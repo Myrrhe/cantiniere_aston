@@ -1,9 +1,46 @@
-<p>u-index works!</p>
+<!-- 
+  Title : Html users List
+  Description : 
+  Author : Thierry Maurouzel
+ -->
 
-<!-- <table>
-    <tr *ngFor="let user of Users; index as i">
-      <td>{{ i + 1 }}</td>
-      <td>{{ user.name }}</td>
-      <td>{{ user.quantity }}</td>
-    </tr>
-  </table> -->
+<div>
+  <button>
+    <a [routerLink]="['edit']">
+      Ajouter un utilisateur
+    </a>
+  </button>
+</div>
+<div>
+  <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Entrez le nom que vous cherchez..." id="">
+  <table class="styled-table scrollbar" id="scrollbar1">
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Id</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Sexe</th>
+        <th>Adresse</th>
+        <th>Code postal</th>
+        <th>Balance</th>
+        <th>Date de création</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList | userListSearch: searchText">
+        <td><a [routerLink]="['edit', user.id]">Editer</a></td>
+        <td>{{ user.id }}</td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.sex }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.postalCode }}</td>
+        <td>{{ user.wallet }}€</td>
+        <td>{{ user.registrationDate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,36 @@
+<!-- 
+  Title : Html users List
+  Description : 
+  Author : Thierry Maurouzel
+ -->
+
+ <div>
+    Hello world Orders
+  </div>
+  
+  <div>
+    <table class="styled-table scrollbar" id="scrollbar1">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Date de création</th>
+          <th>Heure de création</th>
+          <th>Status</th>
+          <th>Utilisateur</th>
+          <th>Quantité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderList">
+          <td><a [routerLink]="['edit', order.id]">Editer</a></td>
+          <td>{{ order.id }}</td>
+          <td>{{ order.creationDate }}</td>
+          <td>{{ order.creationTime }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.User }}</td>
+          <td>{{ order.Quantity }}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>

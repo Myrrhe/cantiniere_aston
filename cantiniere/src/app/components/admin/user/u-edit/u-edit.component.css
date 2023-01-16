@@ -1,0 +1,92 @@
+/*   
+Title : Css user edit
+Description : Page d'édition d'un utilisateur déterminé par son ID. L'admin peux créditer
+Author : Thierry Maurouzel
+*/
+.u-edit-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.u-edit-right-panel {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 15px;
+    margin-right: 15px;
+    border-radius: 8px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.right-panel-user-card {
+    flex-direction: row;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #d7d7d7;
+}
+
+.right-panel-user-card-img {
+    width: 25%;
+}
+
+.right-panel-user-card-img img {
+    width: 100%;
+    border-radius: 50%;
+    transition: .5s ease;
+    opacity: 1;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.right-panel-user-card-img:hover image {
+    opacity: 0.3;
+}
+
+.right-panel-user-card-img:hover .middle {
+    opacity: 1;
+}
+
+.right-panel-user-infos {}
+
+.u-edit-left-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-panel-wallet {
+    height: 75%;
+    width: 40%;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.left-panel-roles {
+    height: 25%;
+    width: 40%;
+    padding: 15px;
+    border-radius: 8px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
