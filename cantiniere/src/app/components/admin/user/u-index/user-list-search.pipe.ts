@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'userListSearch'
+  name: 'userListSearch',
 })
 export class UserListSearchPipe implements PipeTransform {
 
@@ -13,7 +13,7 @@ export class UserListSearchPipe implements PipeTransform {
 
     return value.filter((item: any) => {
       return JSON.stringify(item).toLocaleLowerCase().includes(args);
-    })
+    });
   }
 
 }

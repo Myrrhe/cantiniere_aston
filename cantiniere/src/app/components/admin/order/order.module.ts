@@ -1,6 +1,6 @@
 /**
  * Title : Composant Users list
- * Description : 
+ * Description :
  * Author : Thierry Maurouzel
 */
 
@@ -14,11 +14,11 @@ import { OIndexComponent } from './o-index/o-index.component';
 
 @NgModule({
   declarations: [
-    OIndexComponent
+    OIndexComponent,
   ],
   imports: [
     CommonModule,
-    OrderRoutingModule
+    OrderRoutingModule,
   ]
 })
 export class OrderModule { }

@@ -15,21 +15,20 @@ export class MEditComponent implements OnInit {
   meal!: Meal;
 
   constructor(
-    private activated: ActivatedRoute,
-    private MenuService: MenuService,
+    private readonly activated: ActivatedRoute,
+    private readonly MenuService: MenuService,
   ) { }
 
   ngOnInit(): void {
-    
-    let menuId = this.activated.snapshot.paramMap.get('id')
+    const menuId = this.activated.snapshot.paramMap.get('id');
     if (menuId !== null) {
-    this.MenuService.find(menuId).subscribe(
-      data => {
-        console.log(data)
-        this.menu = data
-      }
-    )   
-  }
+      this.MenuService.find(menuId).subscribe(
+        data => {
+          console.log(data);
+          this.menu = data;
+        }
+      );
+    }
   }
   // onSubmit():void{
   //   console.log(this.menu.id)

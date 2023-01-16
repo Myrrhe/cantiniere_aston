@@ -11,7 +11,7 @@ import { OrderService } from 'src/app/services/order.service';
 @Component({
   selector: 'app-o-index',
   templateUrl: './o-index.component.html',
-  styleUrls: ['./o-index.component.css']
+  styleUrls: ['./o-index.component.css'],
 })
 export class OIndexComponent implements OnInit {
 
@@ -27,8 +27,8 @@ export class OIndexComponent implements OnInit {
       (response) => {
         this.orderList = (response),
         // console.table(this.userList),
-        (error:any) => console.log(error)
+        (error:any) => console.log(error);
       },
-    )
-  } 
+    );
+  }
 }

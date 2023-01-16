@@ -1,6 +1,6 @@
 /**
  * Title : Composant admin header
- * Description : 
+ * Description :
  * Author : Thierry Maurouzel
 */
 
@@ -20,16 +20,16 @@ export class AdminHeaderComponent implements OnInit {
     id: 0,
     name: '',
     firstname: '',
-    email: ''
+    email: '',
   }
 
-  constructor(private tokenService: TokenService) { }
+  constructor(private readonly tokenService: TokenService) { }
 
   ngOnInit(): void {
-    this.user = this.tokenService.getPayload()
-    console.log("this.user")
-    console.log(this.user)
-  } 
+    this.user = this.tokenService.getPayload();
+    console.log('this.user');
+    console.log(this.user);
+  }
 
   logout(): void {
     this.tokenService.clearToken();
