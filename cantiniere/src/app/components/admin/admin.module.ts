@@ -7,7 +7,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     AdminRoutingModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class AdminModule { }

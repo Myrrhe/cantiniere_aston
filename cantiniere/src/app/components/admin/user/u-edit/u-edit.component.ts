@@ -31,7 +31,7 @@ export class UEditComponent implements OnInit {
         this.user = data
       }
     )
-    this.UserService.getUserImage(id).subscribe(
+    this.UserService.getUserImage(id!).subscribe(
       data => {
         this.image = data;
       }
@@ -58,10 +58,10 @@ export class UEditComponent implements OnInit {
   // POST : Add money to user's wallet with serice on userServices
   creditUser(data: any) {
     this.UserService.creditUser(
-      this.user.id,
+      this.user.id!,
       data.credit).subscribe(
         res => {
-          this.UserService.getUser(this.user.id).subscribe(
+          this.UserService.getUser(this.user.id!).subscribe(
             data => {
               // console.log(data)
               this.user = data
@@ -73,10 +73,10 @@ export class UEditComponent implements OnInit {
   // POST : Remove money to user's wallet with service on userServices
   debitUser(data: any) {
     this.UserService.debitUser(
-      this.user.id,
+      this.user.id!,
       data.debit).subscribe(
         res => {
-          this.UserService.getUser(this.user.id).subscribe(
+          this.UserService.getUser(this.user.id!).subscribe(
             data => {
               // console.log(data)
               this.user = data

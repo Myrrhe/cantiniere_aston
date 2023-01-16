@@ -29,6 +29,7 @@ import { UserListSearchPipe } from './u-index/user-list-search.pipe';
   imports: [
     CommonModule,
     UserRoutingModule,
+    FormsModule,
   ],
 })
 export class UserModule { }

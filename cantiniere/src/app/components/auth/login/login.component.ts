@@ -46,10 +46,10 @@ export class LoginComponent implements OnInit {
 
         // console.log(resp.headers.get('Authorization'))
         let originalToken = (resp.headers.get('Authorization'))
-        if (originalToken !== null) {
-        let slicedToken = originalToken.slice(7)
+        // if (originalToken !== null) {
+        let slicedToken = originalToken!.slice(7)
         this.tokenService.saveToken(slicedToken)   
-      }
+      // }
 
       },
       err => console.log(err),

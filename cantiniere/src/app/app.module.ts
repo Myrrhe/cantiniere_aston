@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CategoryPipe } from './pipes/category.pipe';
 import { DayPipe } from './pipes/day.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
