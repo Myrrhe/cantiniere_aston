@@ -3,28 +3,28 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page-panier',
   templateUrl: './page-panier.component.html',
-  styleUrls: ['./page-panier.component.css']
+  styleUrls: ['./page-panier.component.css'],
 })
 export class PagePanierComponent implements OnInit {
-isAuth= false /* variable verfier si l'utilisature est connectée ou pas*/
+isAuth= false; /* variable verfier si l'utilisature est connectée ou pas*/
 
 /* array de command qui ajouter dans le panier
 */
 commands=[{
-jour:"lundi",
-plat:"plat1Name",
+jour:'lundi',
+plat:'plat1Name',
 qty:1,
 prix:23
 },
 {
-  jour:"judi",
-  plat:"plat2Name",
+  jour:'judi',
+  plat:'plat2Name',
   qty:2,
   prix:15
   },
   {
-    jour:"mercurdi",
-    plat:"plat3Name",
+    jour:'mercurdi',
+    plat:'plat3Name',
     qty:1,
     prix:10
     },
@@ -40,4 +40,3 @@ prix:23
   }
 
 }
- 

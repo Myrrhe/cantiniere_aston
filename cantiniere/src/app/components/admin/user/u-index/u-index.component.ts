@@ -17,9 +17,9 @@ export class UIndexComponent implements OnInit {
 
   userList: User[] = [];
   name: any;
-  searchText: "";
+  searchText: string = "";
 
-  constructor(private UserService: UserService) { }
+  constructor(private readonly UserService: UserService) { }
 
   ngOnInit(): void {
     this.onGetUsers();
@@ -30,9 +30,9 @@ export class UIndexComponent implements OnInit {
       (response) => {
         this.userList = (response),
         console.table(this.userList),
-        (error:any) => console.log(error)
+        (error:any) => console.log(error);
       },
-    )
+    );
   }
 
 }

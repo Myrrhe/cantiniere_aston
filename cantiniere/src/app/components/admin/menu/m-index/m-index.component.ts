@@ -1,6 +1,6 @@
 /**
  * Title : Composant Users list
- * Description : 
+ * Description :
  * Author : Thierry Maurouzel
 */
 
@@ -33,9 +33,9 @@ export class MIndexComponent implements OnInit {
       (response) => {
         this.menuList = (response),
         // console.table(this.userList),
-        (error:any) => console.log(error)
+        (error:any) => console.log(error);
       },
-    )
-  } 
+    );
+  }
 
 }

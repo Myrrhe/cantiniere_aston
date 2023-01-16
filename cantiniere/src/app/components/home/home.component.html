@@ -16,7 +16,7 @@
       <div *ngFor="let meal of createRange(menuAvailableForThisWeek[day][menu][0].meals.length)">
         <div *ngIf="menuAvailableForThisWeek[day][menu][0].meals[meal].category === menuAvailableForThisWeek[day][menu][1][category]" class="pad">
           {{menuAvailableForThisWeek[day][menu][0].meals[meal].label}}
-          <img src={{imageMealOfMenus[day][menu][meal].image64}} alt={{menuAvailableForThisWeek[day][menu][0].meals[meal].label}}>
+          <img src={{imageMealOfMenus[day][menu][meal].image64}} alt={{imageMealOfMenus[day][menu][meal].image64}}>
         </div>
       </div>
     </div>
