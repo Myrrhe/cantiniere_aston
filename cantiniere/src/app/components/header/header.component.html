@@ -1,24 +1,45 @@
-<!--le body de le header avec background image et deux blocks-->
-<div id="HeaderTop">
-    <img src="./assets/images/logo.png" id="logo" alt="logo">
-    <button id="ConctBtn" routerLink="auth/login" routerLinkActive="active">Se connecter</button>
-</div>
 
-<header>
-    <div class="title container-fluid d-flex justify-content-between">
-        <h1>Bienvenue</h1>
-        <ul>
-            <li>
-                <a href="#menu" class="active">
-                    <i class="fas fa-home icon"></i>
-                    MENUS
-                </a>
-            </li>
-            <li style="margin-top: 22px;"><a href="#carte">
-                    <i class="fas fa-rss icon"></i>
-                    CARTE
-                </a>
-            </li>
-       </ul>
-    </div>
-</header>
+
+<div class="header">
+
+  <div>
+      <div class="carre">
+      <div class="container">
+          <div class="row">
+              <div class="col-7 mx-auto logo">
+                  <a href="/">
+                      <img  src="./assets/images/logo.png" width="225" alt="">
+                  </a>
+
+                      <button id="ConctBtn" class="button" routerLink="auth/login" routerLinkActive="active">Se connecter</button>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+
+
+
+<!--le body de le header avec background image et deux blocks-->
+<!-- <div id="HeaderTop">
+  <img src="./assets/images/logo.png" id="logo" alt="logo">
+  <button id="ConctBtn" routerLink="auth/login" routerLinkActive="active">Se connecter</button>
+</div> -->
+
+  <div class="title container-fluid d-flex justify-content-between">
+      <h1>Bienvenue</h1>
+      <ul>
+          <li>
+              <a href="#menu" class="active">
+                  MENUS
+              </a>
+          </li>
+          <li style="margin-top: 22px;"><a href="#carte">
+                  CARTE
+              </a>
+          </li>
+     </ul>
+  </div>
+
+</div>

@@ -5,6 +5,33 @@
   background-color: #03989E;
   height: 274px;
   padding: 10px;
+
+  position: relative;
+  top:120vh;
+}
+
+#FooterContainer img{
+  height: 274px;
+}
+
+#FooterContainer a {
+  color: white;
+  cursor: pointer;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+/*
+#FooterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #03989E;
+  height: 274px;
+  padding: 10px;
 }
 #FooterContainer img{
   height: 274px;
@@ -19,3 +46,4 @@
   font-size: 20px;
   line-height: 35px;
 }
+*/

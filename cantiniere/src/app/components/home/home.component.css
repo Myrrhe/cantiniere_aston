@@ -1,3 +1,276 @@
+/* Header */
+html{
+  scroll-behavior: smooth !important;
+}
+main{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  position: relative;
+  top: 105vh;
+}
+.lundis{
+  margin-top: 8vh;
+}
+
 .pad{
   margin-left: 20px;
 }
+.image{
+  display: flex;
+    justify-content: space-around;
+}
+.jour{
+  color: #03989E;
+  font-size: 4.1vh;
+  font-weight: 400;
+  text-align: center;
+  margin-right: 80vh;
+}
+.repas{
+  font-size: 3vh;
+}
+.rien{
+  margin-left: 30vh !important;
+}
+.semaines{
+  font-size: xxx-large;
+    font-family: 'Great Vibes', cursive;
+    margin-bottom: 5vh;
+    text-align: center;
+    margin-right: 76vh;
+}
+
+.prix{
+  font-size: xxx-large;
+  font-family: 'Great Vibes', cursive;
+  margin-bottom: 5vh;
+  text-align: center;
+  margin-right: 43vh;
+}
+
+.menu h1{
+  font-family: 'Great Vibes', cursive;
+  font-size: 8vh;
+}
+
+.menu .ligne1{
+  border-top:2px solid black;
+  border-bottom:2px solid black;
+  width: 100px;
+  height: 9px;
+  margin-top: 28px;
+  margin-right: 21px;
+}
+.menu .ligne2{
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 100px;
+  height: 9px;
+  margin-top: 28px;
+  margin-left: 21px;
+}
+
+.menu .cc{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Tablette */
+@media only screen and (max-width: 768px) {
+  .title h1 {
+      font-family: 'Great Vibes', cursive;
+      color: white;
+      font-size: 80px;
+  }
+
+  .title ul a{
+      color:white;
+      font-weight: bold;
+      font-size: 29px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .bouton{
+    margin-left: 43vh !important;
+  }
+
+  .semaines{
+      margin-right: 0;
+  }
+
+
+
+  .carte .bleu{
+    width: 30vh !important;
+    top: 27px !important;
+    left: 8px !important;
+  }
+
+  .carte .bleu1{
+    width: 31vh !important;
+    top: 27px !important;
+    left: 8px !important;
+  }
+
+  .carte .bleu2{
+    width: 14vh !important;
+    top: 27px !important;
+    left: 8px !important;
+  }
+
+  .carte .bleu3{
+    width: 24vh !important;
+        top: 27px !important;
+        left: 8px !important;
+  }
+
+  .carte .bleu4{
+    width: 19vh !important;
+    top: 27px !important;
+    left: 8px !important;
+  }
+
+  .carte .bleu5{
+    width: 26vh !important;
+    top: 27px !important;
+    left: 6px !important;
+  }
+
+  .rien {
+    text-align: center !important;
+    margin: 0 !important;
+  }
+  .jour{
+    margin-right: 30vh;
+  }
+}
+.bouton{
+  height: 0px;
+  margin-left: 82vh;
+  text-align: center;
+}
+.bordure {
+  margin-left: auto;
+  margin-right: auto;
+  border-top: solid 1px #A9A9A9;
+  width: 17%;
+  margin-bottom: 16vh;
+  margin-top: 16vh;
+}
+
+/* Carte */
+
+.list-cart .row li{
+  list-style-type: none;
+}
+
+.carte {
+  margin: auto !important;
+  margin-top: 8vh !important;
+}
+
+.carte ul{
+  padding-left: 17px;
+
+}
+
+.carte h4{
+  font-size: 4.1vh;
+  margin-bottom: 15px;
+  font-weight: 400;
+  z-index: 1;
+}
+
+.carte ul li{
+  font-size: 2.7vh;
+  margin-bottom: 10px !important;
+}
+
+.bordure2 {
+  margin-left: auto;
+  margin-right: auto;
+  border-top: solid 1px #A9A9A9;
+  width: 17%;
+  margin-top: 6vh;
+  margin-bottom: 6vh;
+}
+
+.carte .bleu{
+  background: rgba(3, 152, 158, 0.64);
+  width: 31vh;
+  border-radius: 5px;
+  height: 1.2vh;
+  position: relative;
+  top: 28px;
+  left: 8px;
+}
+
+.carte .bleu1{
+  background: rgba(3, 152, 158, 0.64);
+  width: 32vh;
+  border-radius: 5px;
+  height: 1.2vh;
+  position: relative;
+  top: 28px;
+  left: 8px;
+}
+
+.carte .bleu2{
+  background: rgba(3, 152, 158, 0.64);
+  width: 14vh;
+  border-radius: 5px;
+  height: 1.2vh;
+  position: relative;
+  top: 28px;
+  left: 7px;
+}
+
+.carte .bleu3{
+  background: rgba(3, 152, 158, 0.64);
+  width: 24vh;
+  border-radius: 5px;
+  height: 1.2vh;
+  position: relative;
+  top: 28px;
+  left: 9px;
+}
+
+.carte .bleu4{
+  background: rgba(3, 152, 158, 0.64);
+  width: 20vh;
+  border-radius: 5px;
+  height: 1.2vh;
+  position: relative;
+  top: 28px;
+  left: 8px;
+}
+
+.carte .bleu5{
+  background: rgba(3, 152, 158, 0.64);
+  width: 26vh;
+  border-radius: 5px;
+  height: 1.2vh;
+  position: relative;
+  top: 28px;
+  left: 6px;
+}
+
+.button{
+  border: solid #03989E;
+  background: white;
+  padding: 10px;
+  color: #03989E;
+  border-radius: 20px;
+  transition: 0.5s;
+  /* margin-left: 55%; */
+  z-index: 1;
+
+}
+
+.button:hover{
+  border: solid #03989E;
+    background: #03989E;
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    }

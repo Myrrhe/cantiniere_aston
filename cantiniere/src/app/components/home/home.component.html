@@ -1,36 +1,259 @@
-<button (click)="openDialog()">
-  Ajouter un plat
-</button>
-
-<div>Menus pour la semaine</div>
-<br>
-<div *ngFor="let day of createRange(7)">
-  {{(day + 1) | day}}
-  <div *ngIf="menuAvailableForThisWeek[day].length === 0" class="pad">
-    Rien (pour l'instant…)
+<main>
+  <div id="menu" class="container text-center menu">
+      <div class="cc">
+          <div class="ligne1"></div>
+          <h1>Menu</h1>
+          <div class="ligne2"></div>
+      </div>
   </div>
-  <div *ngFor="let menu of createRange(menuAvailableForThisWeek[day].length)" class="pad">
-    {{menuAvailableForThisWeek[day][menu][0].label}}
-    <div *ngFor="let category of createRange(menuAvailableForThisWeek[day][menu][1].length)" class="pad">
-      {{menuAvailableForThisWeek[day][menu][1][category] | categoryLabel}}
-      <div *ngFor="let meal of createRange(menuAvailableForThisWeek[day][menu][0].meals.length)">
-        <div *ngIf="menuAvailableForThisWeek[day][menu][0].meals[meal].category === menuAvailableForThisWeek[day][menu][1][category]" class="pad">
-          {{menuAvailableForThisWeek[day][menu][0].meals[meal].label}}
-          <img src={{imageMealOfMenus[day][menu][meal].image64}} alt={{imageMealOfMenus[day][menu][meal].image64}}>
+  <div class="bouton">
+<button class="button" (click)="openDialog()">
+  Ajouter un plat
+</button></div>
+
+
+  <div class="lundis col-md-10 container-fluid" *ngFor="let day of createRange(7)">
+    <div class="semaines">{{(day + 1) | day}}</div>
+    <div *ngIf="menuAvailableForThisWeek[day].length === 0" class="pad rien">
+      Il n'y a pas de menu pour ce jour.
+    </div>
+    <div *ngFor="let menu of createRange(menuAvailableForThisWeek[day].length)" class="pad gundo">
+
+      <div *ngFor="let category of createRange(menuAvailableForThisWeek[day][menu][1].length)" class="pad blbl">
+        <div class="h3 jour">
+        {{menuAvailableForThisWeek[day][menu][1][category] | categoryLabel}}</div>
+        <div class="oooh" *ngFor="let meal of createRange(menuAvailableForThisWeek[day][menu][0].meals.length)">
+          <div *ngIf="menuAvailableForThisWeek[day][menu][0].meals[meal].category === menuAvailableForThisWeek[day][menu][1][category]" class="pad image">
+            <div class="repas center">{{menuAvailableForThisWeek[day][menu][0].meals[meal].label}}</div>
+            <img src={{imageMealOfMenus[day][menu][meal].image64}} alt={{imageMealOfMenus[day][menu][meal].image64}}>
+          </div>
+
         </div>
       </div>
+      <div class="prix">{{menuAvailableForThisWeek[day][menu][0].priceDF}}e
+      </div>
+      <br>
     </div>
-    ({{menuAvailableForThisWeek[day][menu][0].priceDF}} €)
-    <br>
+    <div class="bordure"></div>
+  </div>
+
+
+
+<!-- Carte -->
+
+<div id="carte" class="container text-center menu">
+  <div class="cc">
+      <div class="ligne1"></div>
+      <h1>Carte</h1>
+      <div class="ligne2"></div>
   </div>
 </div>
 
-<br>
-<div>Plats pour la semaine</div>
-<br>
-<div *ngFor="let meal of mealAvailableForThisWeek">
-  <div>{{meal.label}} ({{meal.category | categoryLabel}})</div>
+<div class="carte row col-md-10 justify-content-between">
+  <div class="list-cart col-md-3">
+      <div>
+          <div class="bleu"></div>
+          <h4>Boissons chaude</h4>
+      </div>
+
+      <ul>
+          <div class="row justify-content-between">
+              <li>Thé</li>
+              <li>1,50€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Cafée</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Cafée viennois</li>
+              <li>2,50€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Caffè latte</li>
+              <li>3€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Expresso</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Chocolat chaud</li>
+              <li>2€</li>
+          </div>
+      </ul>
+  </div>
+
+  <div class="list-cart col-md-3">
+      <div class="bleu1"></div>
+      <h4>Boissons fraîches</h4>
+      <ul>
+          <div class="row justify-content-between">
+              <li>Coca cola</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Oasis</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Ice tea</li>
+              <li>2,50€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Sprite</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Orangina</li>
+              <li>1,50€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Eau</li>
+              <li>1€</li>
+          </div>
+      </ul>
+  </div>
+
+  <div class="list-cart col-md-3">
+      <div class="bleu2"></div>
+      <h4>Dessert</h4>
+      <ul>
+          <div class="row justify-content-between">
+              <li>Mousse au chocolat</li>
+              <li>3€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Crème brûlée</li>
+              <li>2,50€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Yaourte nature</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Tarte au chocolat</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Fruit au choix</li>
+              <li>1,50€</li>
+          </div>
+      </ul>
+  </div>
 </div>
+
+<div class="bordure2"></div>
+
+<div class="carte row col-md-10 justify-content-between">
+  <div class="list-cart col-md-3">
+      <div class="bleu3"></div>
+      <h4>Viennoiseries</h4>
+      <ul>
+          <div class="row justify-content-between">
+              <li>Croissant</li>
+              <li>1,50€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Pain au chocolat</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Pain au raisin</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Chausson au pomme</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Crèpe</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Muffin</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Cookies</li>
+              <li>2€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Beignet</li>
+              <li>3€</li>
+          </div>
+      </ul>
+  </div>
+
+  <div class="list-cart col-md-3">
+      <div class="bleu4"></div>
+      <h4>Sandwichs</h4>
+      <ul>
+          <div class="row justify-content-between">
+              <li>Sandwichs thon crudités</li>
+              <li>7€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Sandwichs saumon avocat</li>
+              <li>7€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Sandwichs jambon beurre</li>
+              <li>7€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Sandwichs poulets</li>
+              <li>7€</li>
+          </div>
+      </ul>
+  </div>
+
+  <div class="list-cart col-md-3">
+      <div class="bleu5"></div>
+      <h4>Formules midi</h4>
+      <ul>
+          <div class="row justify-content-between">
+              <li>Plat seul</li>
+              <li>16€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Plat + boisson</li>
+              <li>20€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Plat + dessert</li>
+              <li>22€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Sandwichs + boisson</li>
+              <li>9€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Sandwichs + dessert</li>
+              <li>11€</li>
+          </div>
+          <div class="row justify-content-between">
+              <li>Formule complet</li>
+              <li>13,50€</li>
+          </div>
+      </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div *ngFor="let meal of mealAvailableForThisWeek">
+  <div>{{meal.label}} ({{meal.category | categoryLabel}})</div>
+</div> -->
 
 
 <!-- <div *ngFor="let meal of fakeMeals">
