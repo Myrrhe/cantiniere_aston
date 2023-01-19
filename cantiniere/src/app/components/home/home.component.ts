@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   fakeImages: Image[] = [];
 
   // Set this variable to true if you want to use the database
-  usingDatabase: boolean = false;
+  usingDatabase: boolean = true;
 
   constructor(
     public dialogRef: MatDialog,
@@ -63,12 +63,15 @@ export class HomeComponent implements OnInit {
   organizeMenus(menus: Menu[]) {
     // We get the manus available for this week
     const dataFiltered: Menu[] = this.dateService.filterAvailableForThisWeek(menus as (Meal & Menu)[]);
+    console.log("menus = ", dataFiltered)
     for (const menu of dataFiltered) {
       const categories: number[] = [];
       // We get the differents categories presents in each menus
-      for (const meal of menu.meals) {
-        if (!categories.some((category: number): boolean => meal.category === category)) {
-          categories.push(meal.category);
+      if (menu.meals !== undefined) {
+        for (const meal of menu.meals) {
+          if (!categories.some((category: number): boolean => meal.category === category)) {
+            categories.push(meal.category);
+          }
         }
       }
       // We sort the categories
@@ -78,20 +81,22 @@ export class HomeComponent implements OnInit {
         if (this.dateService.isAvailableForDayOfThisWeek(menu, i + 1)) {
           this.menuAvailableForThisWeek[i].push([menu, categories]);
           this.imageMealOfMenus[i].push([]);
-          for (const meal of menu.meals) {
-            // For each meals, we look for it's image
-            if (this.usingDatabase) {
-              let currentId = 0;
-              if (meal.id !== undefined) {
-                currentId = meal.id;
-              }
-              this.mealService.findImg(currentId).subscribe((dataImg: any) => {
-                this.imageMealOfMenus[i][this.imageMealOfMenus[i].length - 1].push(dataImg);
-              });
-            } else {
-              const imageFound: Image | undefined = this.fakeImages.find((image: Image) => image.id === meal.imageId);
-              if (imageFound !== undefined) {
-                this.imageMealOfMenus[i][this.imageMealOfMenus[i].length - 1].push(imageFound);
+          if (menu.meals !== undefined) {
+            for (const meal of menu.meals) {
+              // For each meals, we look for it's image
+              if (this.usingDatabase) {
+                let currentId = 0;
+                if (meal.id !== undefined) {
+                  currentId = meal.id;
+                }
+                this.mealService.findImg(currentId).subscribe((dataImg: any) => {
+                  this.imageMealOfMenus[i][this.imageMealOfMenus[i].length - 1].push(dataImg);
+                });
+              } else {
+                const imageFound: Image | undefined = this.fakeImages.find((image: Image) => image.id === meal.imageId);
+                if (imageFound !== undefined) {
+                  this.imageMealOfMenus[i][this.imageMealOfMenus[i].length - 1].push(imageFound);
+                }
               }
             }
           }

@@ -30,7 +30,7 @@ export class DateService {
       return [];
     }
     return mealsOrMenus.filter((mealOrMenu: Meal & Menu) => {
-      if (mealOrMenu.availableForWeeksAndDays.values != null) {
+      if (mealOrMenu.availableForWeeksAndDays != null && mealOrMenu.availableForWeeksAndDays.values != null) {
         return mealOrMenu.availableForWeeksAndDays.values.some((wd: WeekAndDays) => week === wd.week && day === wd.day);
       } else {
         return false;
@@ -45,7 +45,7 @@ export class DateService {
       return [];
     }
     return mealsOrMenus.filter((mealOrMenu: Meal & Menu) => {
-      if (mealOrMenu.availableForWeeksAndDays.values != null) {
+      if (mealOrMenu.availableForWeeksAndDays != null && mealOrMenu.availableForWeeksAndDays.values != null) {
         return mealOrMenu.availableForWeeksAndDays.values.some((wd: WeekAndDays) => week === wd.week);
       } else {
         return false;
@@ -60,7 +60,7 @@ export class DateService {
       return [];
     }
     return mealsOrMenus.filter((mealOrMenu: Meal & Menu) => {
-      if (mealOrMenu.availableForWeeksAndDays.values != null) {
+      if (mealOrMenu.availableForWeeksAndDays != null && mealOrMenu.availableForWeeksAndDays.values != null) {
         return mealOrMenu.availableForWeeksAndDays.values.some((wd: WeekAndDays) =>
           this.getCurrentWeekNumber() === wd.week && this.getCurrentDayNumber() === wd.day);
       } else {
@@ -76,7 +76,7 @@ export class DateService {
       return [];
     }
     return mealsOrMenus.filter((mealOrMenu: Meal & Menu) => {
-      if (mealOrMenu.availableForWeeksAndDays.values != null) {
+      if (mealOrMenu.availableForWeeksAndDays != null && mealOrMenu.availableForWeeksAndDays.values != null) {
         return mealOrMenu.availableForWeeksAndDays.values.some((wd: WeekAndDays) => this.getCurrentWeekNumber() === wd.week);
       } else {
         return false;
@@ -90,14 +90,20 @@ export class DateService {
     if (mealsOrMenus.length < 1) {
       return [];
     }
-    return mealsOrMenus.filter((mealOrMenu: Meal & Menu) => mealOrMenu.availableForWeeksAndDays.values != null);
+    return mealsOrMenus.filter((mealOrMenu: Meal & Menu) => mealOrMenu.availableForWeeksAndDays != null && mealOrMenu.availableForWeeksAndDays.values != null);
   }
 
   isAvailableForWeekAndDay(mealOrMenu: Meal | Menu, week: number, day: number): boolean {
-    return mealOrMenu.availableForWeeksAndDays.values.some((wd: WeekAndDays) => week === wd.week && day === wd.day);
+    if (mealOrMenu.availableForWeeksAndDays != null) {
+      return mealOrMenu.availableForWeeksAndDays.values.some((wd: WeekAndDays) => week === wd.week && day === wd.day);
+    }
+    return false;
   }
 
   isAvailableForDayOfThisWeek(mealOrMenu: Meal | Menu, day: number): boolean {
-    return mealOrMenu.availableForWeeksAndDays.values.some((wd: WeekAndDays) => this.getCurrentWeekNumber() === wd.week && day === wd.day);
+    if (mealOrMenu.availableForWeeksAndDays != null) {
+      return mealOrMenu.availableForWeeksAndDays.values.some((wd: WeekAndDays) => this.getCurrentWeekNumber() === wd.week && day === wd.day);
+    }
+    return false;
   }
 }

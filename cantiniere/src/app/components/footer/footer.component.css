@@ -5,14 +5,18 @@
   background-color: #03989E;
   height: 274px;
   padding: 10px;
+
+  position: relative;
+  top:120vh;
 }
+
 #FooterContainer img{
   height: 274px;
-
 }
 
-#FooterContainer #FooterText {
+#FooterContainer a {
   color: white;
+  cursor: pointer;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
