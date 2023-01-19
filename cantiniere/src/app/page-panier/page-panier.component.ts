@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from '../services/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-panier',
@@ -6,27 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-panier.component.css'],
 })
 export class PagePanierComponent implements OnInit {
-isAuth= false; /* variable verfier si l'utilisature est connectée ou pas*/
+isAuth = this.tokenService.isLogged(); /* variable verfier si l'utilisature est connectée ou pas*/
 
 /* array de command qui ajouter dans le panier
 */
 commands=[{
-jour:'lundi',
+jour:'Lundi',
 plat:'plat1Name',
 qty:1,
-prix:23
+prix:23,
 },
 {
-  jour:'judi',
+  jour:'Jeudi',
   plat:'plat2Name',
   qty:2,
-  prix:15
+  prix:15,
   },
   {
-    jour:'mercurdi',
+    jour:'Mercredi',
     plat:'plat3Name',
     qty:1,
-    prix:10
+    prix:10,
     },
 ]
 /* total variable affich les sum de prix de commandes*/
@@ -34,9 +36,19 @@ prix:23
   return accumulator + obj.prix;
 }, 0);
 
-  constructor() { }
+  constructor(
+    private readonly tokenService: TokenService,
+    public router: Router,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  toLogin() {
+    this.router.navigate(['login']);
+  }
+
+  validateCommand() {
   }
 
 }

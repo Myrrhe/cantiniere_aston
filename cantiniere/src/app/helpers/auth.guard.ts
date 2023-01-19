@@ -16,7 +16,7 @@ import { TokenService } from '../services/token.service';
 export class AuthGuard implements CanActivate {
   constructor(
     private readonly router: Router,
-    private readonly tokenService: TokenService
+    private readonly tokenService: TokenService,
   ) { }
 
   canActivate(

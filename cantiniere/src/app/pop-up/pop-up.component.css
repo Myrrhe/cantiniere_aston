@@ -1,3 +1,6 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@100;200&family=Roboto:ital,wght@1,700&display=swap'); */
+
 h2{
     font-family: 'Great Vibes', cursive;
     font-size: 8vh;
@@ -59,11 +62,11 @@ select{
     left: 25%;
     width: 50%;
 }
-.DialogBtn{   
+.DialogBtn{
 width: 60%;
 margin-top: 2%;
 color: white;
-background-color: 
+background-color:
 rgba(3, 152, 158, 0.64);
 font-family: 'Inter';
 font-style: normal;
