@@ -4,7 +4,7 @@
 	min-height: 30em;
 	height: 100%;
 	/* background-image: url("../../assets/images/cantine.jpg"); */
-    background-image: url("../../../assets/images/cantine.jpg");
+  background-image: url("../../../assets/images/cantine.jpg");
 	background-size: cover;
 }
 .half-transparent {
