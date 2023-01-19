@@ -180,11 +180,10 @@ export class HomeComponent implements OnInit {
 
     // Images creation
     for (let i = 0; i < currentImageId; i++) {
-      // The images don't work with the one created for this purpose for some reason
       this.fakeImages.push({
         id: i + 1,
         image64: `../../../assets/images/fake/${i + 1}.png`,
-        imagePath: `../../assets/images/fake/${i + 1}.png`,
+        imagePath: `../../../assets/images/fake/${i + 1}.png`,
         isDefault: 0,
       });
     }

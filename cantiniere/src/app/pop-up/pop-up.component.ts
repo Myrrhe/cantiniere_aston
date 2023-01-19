@@ -2,6 +2,8 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import { FormsModule,FormGroup,FormBuilder } from '@angular/forms';
 import { MatDialog, MatDialogConfig, MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-pop-up',
   templateUrl: './pop-up.component.html',
@@ -27,18 +29,19 @@ ngOnInit() {
 constructor(
   public dialogRef: MatDialogRef<PopUpComponent>,
   @Inject(MAT_DIALOG_DATA) public data:any,
+  private readonly router: Router,
 ) {}
 
 
-Ajouter(){
-
+ajouter(){
   console.log(this.data);
   console.log(this.QSelected);
   console.log('plat1 checked?',this.plat1Checked);
   console.log('plat2 checked?',this.plat2Checked);
   console.log('plat2 seul?',this.plat2SeulChecked);
 
-
+  this.router.navigate(['panier'], { });
+  this.dialogRef.close();
 }
 onNoClick(): void {
   this.dialogRef.close();

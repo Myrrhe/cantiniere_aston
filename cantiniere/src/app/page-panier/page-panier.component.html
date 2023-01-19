@@ -1,10 +1,3 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@1,700&display=swap');
-</style>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@100;200&family=Roboto:ital,wght@1,700&display=swap');
-</style>
-
 <!--le div pody de le composant de panier page-->
 <div id="PagePanierContainer">
     <!--le div pour le page title-->
@@ -37,7 +30,7 @@
                         <img src="../../assets/DeleteBtn.png" alt="deleteButton" class="deleteBtn">
                     </div>
                 </div>
-                <!---------end de cart---------------------->  
+                <!---------end de cart---------------------->
             </div>
             <span id="totaleSpan">
                 <p>TOTAL</p>
@@ -51,8 +44,8 @@
             <p>{{total}}<span>€</span></p>
             <!--le button change de contunu dynamique-->
             <button *ngIf="!isAuth">CONNECTEZ-VOUS</button>
-            <button *ngIf="isAuth">VALIDER LA COMMANDE</button>
-            
+            <button *ngIf="isAuth" (click)="validateCommand()">VALIDER LA COMMANDE</button>
+
         </section>
     </div>
 </div>

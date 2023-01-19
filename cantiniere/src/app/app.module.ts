@@ -34,9 +34,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DayPipe,
     PagePanierComponent,
     PopUpComponent,
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -46,9 +43,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
   ],
   providers: [TokenInterceptorProvider],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

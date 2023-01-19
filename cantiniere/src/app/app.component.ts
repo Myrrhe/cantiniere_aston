@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PopUpComponent } from './pop-up/pop-up.component';
 /**
  * The main component
