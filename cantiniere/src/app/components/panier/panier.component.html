@@ -1,0 +1,23 @@
+
+<mat-card *ngIf="cart.items.length" class="card">
+   <table mat-table [dataSource]="dataSource">
+
+    <ng-container  matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef>userId</th>
+        <td mat-cell *matCellDef="let element">
+           
+            <p class="noir">{{ element.userId }}</p>
+          </td>
+    </ng-container>
+    <tr mat--header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+   </table>
+  </mat-card>
+
+<mat-card *ngIf="!cart.items.length" class="card">
+    <p>
+      Your cart is empty.
+      <button mat-raised-button routerLink="/home">Start Shopping</button>
+    </p>
+  </mat-card>

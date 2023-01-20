@@ -1,0 +1,11 @@
+.card{
+    width :200px;
+    height: 200px;
+    border: solid black 2px;
+    color: black;
+    margin-left: 200px;
+}
+.noir{
+    font-size: 2em;
+    color: black;
+}

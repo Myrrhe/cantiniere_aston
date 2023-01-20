@@ -8,6 +8,7 @@ import { AuthGuard } from './helpers/auth.guard';
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomeComponent } from './components/home/home.component';
+import { PanierComponent } from './components/panier/panier.component';
 
 // Pensez à bien rajouter vos URLs en haut
 const routes: Routes = [
@@ -27,6 +28,8 @@ const routes: Routes = [
   // { path: 'signin', component: SigninComponent },
   { path: '404', component: PageNotFoundComponent },
   { path: 'registration', component: RegistrationComponent },
+  { path: 'panier', component: PanierComponent },
+
   { path: '**', pathMatch: 'full', redirectTo: '/404'},
 
 ];

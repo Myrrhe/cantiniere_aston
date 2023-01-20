@@ -71,3 +71,7 @@ Il y a plusieurs manière de régler les conflits, celle présentée ici n'en es
 14) `git push origin nouvelle-branche` On push notre branche. Dans certain cas, il faudra faire `git push origin nouvelle-branche --force-with-lease`
 15) On crée la pull request
 16) On vérifie le code, puis on merge
+
+
+ajout de la librairie material/card 
+commande ng add @angular/material
